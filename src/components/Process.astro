@@ -1,0 +1,71 @@
+---
+// src/components/Process.astro
+
+const steps = [
+  {
+    number: "01",
+    title: "Проектирование",
+    description: "Мы практики. Говорим с бизнесом на одном языке. Не просто рисуем схемы, а консультируем и помогаем найти оптимальный путь.",
+    icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+  },
+  {
+    number: "02",
+    title: "AI-Дизайн",
+    description: "Быстрое прототипирование интерфейса с помощью AI. От идеи до визуального воплощения за считанные часы.",
+    icon: "M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+  },
+  {
+    number: "03",
+    title: "Разработка",
+    description: "Подбираем современный стек под конкретную задачу. Чистый код, масштабируемость и высокая производительность.",
+    icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+  },
+  {
+    number: "04",
+    title: "Автоматизация",
+    description: "AI-обработка данных, кастомные скрипты, n8n и серверные задачи. Продукт начинает работать на ваш бизнес 24/7.",
+    icon: "M13 10V3L4 14h7v7l9-11h-7z"
+  }
+];
+---
+
+<section id="process" class="py-24 px-6 bg-background">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-20">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6 italic uppercase tracking-tight">
+        Ваш путь <span class="text-accent not-italic">к продукту</span>
+      </h2>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        Прозрачный процесс от первого звонка до работающей системы. <br class="hidden md:block" /> 
+        Максимальная скорость без потери качества.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {steps.map((step) => (
+        <div class="group p-8 bg-surface border border-border-primary rounded-container hover:border-accent/30 transition-all duration-500 relative overflow-hidden">
+          <!-- Background Number -->
+          <div class="absolute -right-4 -top-4 text-8xl font-black text-white/[0.02] group-hover:text-accent/[0.05] transition-colors select-none">
+            {step.number}
+          </div>
+          
+          <div class="relative z-10">
+            <div class="w-12 h-12 bg-accent/10 rounded-button flex items-center justify-center mb-6 border border-accent/20 group-hover:scale-110 transition-transform duration-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={step.icon} />
+              </svg>
+            </div>
+            
+            <h3 class="text-xl font-bold mb-4 group-hover:text-accent transition-colors">
+              {step.title}
+            </h3>
+            
+            <p class="text-gray-500 text-sm leading-relaxed group-hover:text-gray-400 transition-colors">
+              {step.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

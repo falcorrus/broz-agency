@@ -94,72 +94,59 @@ const MagicSlider: React.FC = () => {
           {/* Foreground Layer: The UI (Revealed based on slider position) */}
           <motion.div 
             style={{ clipPath }}
-            className="absolute inset-0 bg-gradient-to-br from-accent/15 via-background to-background backdrop-blur-[4px]"
+            className="absolute inset-0 bg-[#0f1117] backdrop-blur-[4px]"
           >
-            <div className="absolute inset-0 flex items-center justify-center p-2 sm:p-4 md:p-12 overflow-hidden">
-              {/* RAG-like UI Mockup */}
-              <div className="w-full h-full max-w-5xl bg-[#0a0a0a] border border-white/10 rounded-xl shadow-2xl flex flex-col overflow-hidden scale-[0.85] sm:scale-100 transition-transform duration-500">
-                {/* Top Bar */}
-                <div className="h-12 border-b border-white/5 flex items-center px-4 justify-between bg-black/40">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-accent rounded-sm" />
-                    <div className="text-[11px] font-bold text-gray-300">Спортклуб Арнольд / AI-ассистент</div>
-                  </div>
-                  <div className="flex gap-2">
-                    <div className="h-6 w-16 bg-white/5 rounded border border-white/5" />
-                    <div className="h-6 w-6 bg-white/10 rounded-full" />
-                  </div>
-                </div>
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-8 md:p-12 overflow-hidden text-white font-sans">
+              <div className="w-full max-w-2xl flex flex-col items-center gap-6 scale-[0.7] sm:scale-90 md:scale-100 transition-transform duration-500">
                 
-                <div className="flex-1 flex overflow-hidden">
-                  {/* Left Sidebar: Knowledge Sources */}
-                  <div className="hidden md:flex flex-col gap-4 w-56 border-r border-white/5 p-4 bg-black/20">
-                    <div className="text-[10px] uppercase tracking-wider text-gray-500 font-bold mb-2">База знаний</div>
-                    {[1, 2, 3].map(i => (
-                      <div key={i} className="flex items-center gap-3 p-2 rounded-lg bg-white/5 border border-white/5">
-                        <div className="w-6 h-6 bg-accent/20 rounded flex items-center justify-center">
-                          <div className="w-3 h-3 bg-accent/40 rounded-sm" />
-                        </div>
-                        <div className="h-2 w-24 bg-white/10 rounded" />
-                      </div>
-                    ))}
-                    <div className="mt-auto p-3 rounded-lg border border-dashed border-white/10 flex items-center justify-center">
-                      <div className="text-[9px] text-gray-500">+ Обновить прайс</div>
-                    </div>
-                  </div>
+                {/* RAG-online Header */}
+                <h1 className="text-3xl font-bold tracking-tight">RAG-online</h1>
 
-                  {/* Main: AI Chat Interface */}
-                  <div className="flex-1 flex flex-col p-4 sm:p-6 bg-gradient-to-b from-transparent to-accent/5">
-                    <div className="flex-1 space-y-6">
-                      {/* User Message */}
-                      <div className="flex justify-end">
-                        <div className="max-w-[80%] bg-accent/10 border border-accent/20 p-3 rounded-2xl rounded-tr-none text-[11px] text-gray-300">
-                          сколько стоит
-                        </div>
-                      </div>
-                      
-                      {/* AI Response */}
-                      <div className="flex justify-start gap-3">
-                        <div className="w-8 h-8 bg-accent rounded-full flex-shrink-0 flex items-center justify-center text-[10px] font-bold">AI</div>
-                        <div className="max-w-[85%] space-y-3">
-                          <div className="bg-white/5 border border-white/10 p-4 rounded-2xl rounded-tl-none text-[11px] text-gray-400 leading-relaxed">
-                            У нас есть одноразовое посещение за 1500 и ежемесячные абонементы за 3500. Также, предусмотрены пробные занятия. Записаться можно у менеджера +55 111 222334
-                          </div>
-                          {/* Citation dots */}
-                          <div className="flex gap-2">
-                            <div className="px-2 py-1 bg-white/5 rounded border border-white/5 text-[8px] text-gray-500">Прайс_2026.pdf</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Input Area */}
-                    <div className="mt-6 h-12 bg-white/5 border border-white/10 rounded-full flex items-center px-4 gap-3">
-                      <div className="h-3 w-full bg-white/5 rounded" />
-                      <div className="w-8 h-8 bg-accent rounded-full flex-shrink-0" />
+                {/* Search Bar */}
+                <div className="w-full bg-[#161b22] border border-white/10 rounded-xl px-6 py-4 flex items-center justify-between shadow-lg">
+                  <span className="text-gray-300 font-medium text-lg">сколько стоит</span>
+                  <div className="flex items-center gap-4">
+                    <span className="text-gray-500 text-xl">✕</span>
+                    <div className="w-10 h-10 bg-[#5c5cfc] rounded-lg flex items-center justify-center shadow-lg shadow-accent/20">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
                     </div>
                   </div>
                 </div>
+
+                {/* Quick Questions Chips */}
+                <div className="flex flex-col items-center gap-3 w-full">
+                  <div className="flex flex-wrap justify-center gap-3">
+                    <div className="px-4 py-2 bg-[#161b22]/50 border border-white/5 rounded-full text-[11px] text-gray-400">Где хранятся мои данные в CoinLover?</div>
+                    <div className="px-4 py-2 bg-[#161b22]/50 border border-white/5 rounded-full text-[11px] text-gray-400">Как мне зарегистрироваться в CoinLover?</div>
+                  </div>
+                  <div className="px-4 py-2 bg-[#161b22]/50 border border-white/5 rounded-full text-[11px] text-gray-400">Сколько стоит подписка на CoinLover после периода тестирования?</div>
+                </div>
+
+                {/* AI Response Card */}
+                <div className="w-full bg-[#161b22]/80 border border-white/10 rounded-2xl p-8 relative shadow-2xl">
+                  <div className="space-y-6 text-[13px] text-gray-200 leading-relaxed">
+                    <p>Для всех пользователей, подключившихся во время периода тестирования, использование приложения бесплатно навсегда. Обычная стоимость подписки составит 10 USD в год.</p>
+                    <p>Для вопросов: telegram <span className="text-accent">@argodon</span>, +5548992012727</p>
+                  </div>
+                  <div className="absolute bottom-4 right-4 p-2 bg-white/5 rounded-lg border border-white/10">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Footer Buttons */}
+                <div className="flex flex-col items-center gap-4 mt-2">
+                  <div className="px-6 py-2.5 bg-[#161b22] border border-white/10 rounded-xl text-[12px] font-medium text-gray-300 cursor-pointer hover:border-accent/50 transition-colors">
+                    Создайте свой RAG в 2 клика
+                  </div>
+                  <div className="text-[10px] text-gray-600 tracking-widest uppercase">
+                    made in <span className="text-gray-400 font-bold">Broz studio</span>
+                  </div>
+                </div>
+
               </div>
             </div>
           </motion.div>

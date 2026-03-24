@@ -5,12 +5,14 @@ import Portfolio from '../components/Portfolio.astro';
 import Contact from '../components/Contact.astro';
 import { TrustBadge } from '../components/TrustBadge';
 import MagicSlider from '../components/MagicSlider';
+import Process from '../components/Process.astro';
 ---
 
 <Layout title="broz.agency | Превращаю задачи в прибыль">
   <main class="relative">
     <Hero />
     <MagicSlider client:load />
+    <Process />
     <Portfolio />
     <TrustBadge client:load />
     <Contact />
