@@ -143,7 +143,7 @@ const MagicSlider: React.FC = () => {
                         <div className="w-8 h-8 bg-accent rounded-full flex-shrink-0 flex items-center justify-center text-[10px] font-bold">AI</div>
                         <div className="max-w-[85%] space-y-3">
                           <div className="bg-white/5 border border-white/10 p-4 rounded-2xl rounded-tl-none text-[11px] text-gray-400 leading-relaxed">
-                            У нас есть одноразовое посещение и ежемесячные абонементы. Уточните у менеджера +55 111 222334
+                            У нас есть одноразовое посещение за 1500 и ежемесячные абонементы за 3500. Также, предусмотрены пробные занятия. Записаться можно у менеджера +55 111 222334
                           </div>
                           {/* Citation dots */}
                           <div className="flex gap-2">
