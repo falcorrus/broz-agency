@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Portfolio from '../components/Portfolio.astro';
+import Contact from '../components/Contact.astro';
+import { TrustBadge } from '../components/TrustBadge';
+import MagicSlider from '../components/MagicSlider';
+---
+
+<Layout title="broz.agency | Превращаю задачи в прибыль">
+  <main class="relative">
+    <Hero />
+    <MagicSlider client:load />
+    <Portfolio />
+    <TrustBadge client:load />
+    <Contact />
+  </main>
+</Layout>

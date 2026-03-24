@@ -1,0 +1,20 @@
+services:
+  broz-agency:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: broz-agency
+    ports:
+      - "8020:8080"
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s

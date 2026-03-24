@@ -1,0 +1,39 @@
+---
+// src/layouts/Layout.astro
+import '../styles/global.css';
+export interface Props { title: string; }
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+		<!-- Google Fonts: Inter -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-background text-white font-['Inter',sans-serif] antialiased selection:bg-accent selection:text-white">
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	/* Custom scrollbar */
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+	::-webkit-scrollbar-track {
+		background: #050505; /* fallback for background theme */
+	}
+	::-webkit-scrollbar-thumb {
+		background: #1a1a1a; /* fallback for border-primary theme */
+		border-radius: 5px;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: #252525;
+	}
+</style>

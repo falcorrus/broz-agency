@@ -1,0 +1,11 @@
+node_modules
+dist
+.astro
+.vscode
+.git
+.gitignore
+README.md
+Dockerfile
+docker-compose.yml
+nginx.conf
+npm-debug.log

@@ -1,0 +1,104 @@
+---
+// src/components/Portfolio.astro
+
+const projects = [
+  {
+    title: "Reloto",
+    description: "AI-powered real estate platform for automated property management.",
+    tags: ["Astro", "React", "OpenAI"],
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
+    link: "https://reloto.ru"
+  },
+  {
+    title: "CoinLover",
+    description: "Minimalist crypto portfolio tracker with real-time analytics.",
+    tags: ["Flutter", "FastAPI", "PostgreSQL"],
+    image: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?auto=format&fit=crop&q=80&w=800",
+    link: "#"
+  },
+  {
+    title: "Baonline",
+    description: "Business automation hub for streamlined operational workflows.",
+    tags: ["Next.js", "Supabase", "n8n"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    link: "https://baonline.ru"
+  },
+  {
+    title: "NewAddress",
+    description: "Real Estate platform with automated listings and smart search features.",
+    tags: ["Next.js", "Mapbox", "PostgreSQL"],
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
+    link: "#"
+  },
+  {
+    title: "RAG Search",
+    description: "Deep tech research engine with context-aware AI retrieval.",
+    tags: ["Python", "LangChain", "Pinecone"],
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+    link: "#"
+  }
+];
+---
+
+<section id="portfolio" class="py-24 px-6 bg-background">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl md:text-5xl font-bold mb-6 tracking-tight italic uppercase">
+          <span class="text-accent block text-sm tracking-[0.3em] font-bold not-italic mb-2">Selected Cases</span>
+          Visual Showcase
+        </h2>
+        <p class="text-gray-400 text-lg leading-relaxed">
+          Проекты, которые решают реальные боли бизнеса через автоматизацию, <br class="hidden md:block" /> 
+          чистый UX и масштабируемую архитектуру.
+        </p>
+      </div>
+      <div class="pb-1">
+        <div class="w-32 h-[1px] bg-gradient-to-r from-accent to-transparent"></div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project) => (
+        <a 
+          href={project.link} 
+          class="group block bg-surface border border-border-primary rounded-container overflow-hidden hover:border-accent/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl"
+        >
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <img 
+              src={project.image} 
+              alt={project.title}
+              class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"></div>
+          </div>
+          
+          <div class="p-8">
+            <div class="flex flex-wrap gap-2 mb-4">
+              {project.tags.map(tag => (
+                <span class="text-[10px] uppercase tracking-wider font-semibold text-gray-500 px-2 py-1 border border-border-primary rounded-full">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            
+            <h3 class="text-2xl font-bold mb-3 group-hover:text-accent transition-colors">
+              {project.title}
+            </h3>
+            
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              {project.description}
+            </p>
+            
+            <div class="flex items-center gap-2 text-accent text-sm font-bold uppercase tracking-widest overflow-hidden">
+              <span class="translate-x-0 group-hover:translate-x-1 transition-transform duration-300">View Project</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 -translate-x-1 group-hover:translate-x-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
