@@ -5,35 +5,35 @@ const projects = [
   {
     title: "CoinLover",
     description: "Minimalist crypto portfolio tracker with real-time analytics.",
-    tags: ["Flutter", "FastAPI", "PostgreSQL"],
+    category: "Mobile App",
     image: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?auto=format&fit=crop&q=80&w=800",
     link: "https://coinlover.ru/landing"
   },
   {
     title: "Baonline",
     description: "Business automation hub for streamlined operational workflows.",
-    tags: ["Next.js", "Supabase", "n8n"],
+    category: "Web Platform",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
     link: "http://reloto.ru/bao-profi"
   },
   {
     title: "NewAddress",
     description: "Real Estate platform with automated listings and smart search features.",
-    tags: ["Next.js", "Mapbox", "PostgreSQL"],
+    category: "Web App",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
     link: "http://reloto.ru/na"
   },
   {
     title: "RAG Online",
     description: "AI-powered assistant for automated business communication.",
-    tags: ["Astro", "React", "OpenAI"],
+    category: "AI Automation",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
     link: "https://rag.reloto.ru"
   },
   {
     title: "RAG Search",
     description: "Deep tech research engine with context-aware AI retrieval.",
-    tags: ["Python", "LangChain", "Pinecone"],
+    category: "Automation",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
     link: "https://search.reloto.ru/"
   }
@@ -45,8 +45,8 @@ const projects = [
     <div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
       <div class="max-w-2xl">
         <h2 class="text-3xl md:text-5xl font-bold mb-6 tracking-tight italic uppercase">
-          <span class="text-accent block text-sm tracking-[0.3em] font-bold not-italic mb-2">Selected Cases</span>
-          Visual Showcase
+          <span class="text-accent block text-sm tracking-[0.3em] font-bold not-italic mb-2">Expertise in Action</span>
+          Selected Cases
         </h2>
         <p class="text-gray-400 text-lg leading-relaxed">
           Проекты, которые решают реальные боли бизнеса через автоматизацию, <br class="hidden md:block" /> 
@@ -72,17 +72,16 @@ const projects = [
               class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"></div>
+            
+            <!-- Category Badge overlay -->
+            <div class="absolute top-4 left-4">
+              <span class="bg-background/80 backdrop-blur-md text-accent text-[10px] uppercase tracking-widest font-bold px-3 py-1.5 rounded-full border border-accent/20">
+                {project.category}
+              </span>
+            </div>
           </div>
           
           <div class="p-8">
-            <div class="flex flex-wrap gap-2 mb-4">
-              {project.tags.map(tag => (
-                <span class="text-[10px] uppercase tracking-wider font-semibold text-gray-500 px-2 py-1 border border-border-primary rounded-full">
-                  {tag}
-                </span>
-              ))}
-            </div>
-            
             <h3 class="text-2xl font-bold mb-3 group-hover:text-accent transition-colors">
               {project.title}
             </h3>
@@ -92,7 +91,7 @@ const projects = [
             </p>
             
             <div class="flex items-center gap-2 text-accent text-sm font-bold uppercase tracking-widest overflow-hidden">
-              <span class="translate-x-0 group-hover:translate-x-1 transition-transform duration-300">View Project</span>
+              <span class="translate-x-0 group-hover:translate-x-1 transition-transform duration-300">Explore Case</span>
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 -translate-x-1 group-hover:translate-x-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
