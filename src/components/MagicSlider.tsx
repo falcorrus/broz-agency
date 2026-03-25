@@ -76,12 +76,8 @@ const MagicSlider: React.FC = () => {
                 <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/30" />
                 <div className="w-2.5 h-2.5 rounded-full bg-green-500/30" />
               </div>
-              <div className="font-mono text-xs sm:text-sm md:text-base space-y-2 text-gray-400">
-                <p><span className="text-accent">заявка:</span> устал ловить вопросы клиентов</p>
-                <p>в месенджерах. Сделай, чтобы они находили</p>
-                <p>ответы на все вопросы в одном месте,</p>
-                <p>но могли связаться со мной. И чтобы я мог</p>
-                <p>легко обновлять данные.</p>
+              <div className="font-mono text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">
+                <span className="text-accent">заявка:</span> устал ловить вопросы клиентов в месенджерах. Сделай, чтобы они находили ответы на все вопросы в одном месте, но могли связаться со мной. И чтобы я мог легко обновлять данные.
                 <motion.span 
                   animate={{ opacity: [1, 0] }}
                   transition={{ repeat: Infinity, duration: 0.8 }}
