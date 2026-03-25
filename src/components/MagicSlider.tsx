@@ -157,10 +157,13 @@ const MagicSlider: React.FC = () => {
             onPan={handlePan}
             className="absolute top-0 bottom-0 w-1 bg-accent z-50 cursor-col-resize group-hover:bg-accent-glow -ml-0.5"
           >
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-accent rounded-full border-4 border-background flex items-center justify-center shadow-xl">
+            {/* Larger hit area for touch devices */}
+            <div className="absolute top-0 bottom-0 -left-4 -right-4 cursor-col-resize z-10" />
+            
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-accent rounded-full border-4 border-background flex items-center justify-center shadow-2xl z-20 touch-none">
               <div className="flex gap-1">
-                <div className="w-1 h-2 sm:h-3 bg-white/80 rounded-full" />
-                <div className="w-1 h-2 sm:h-3 bg-white/80 rounded-full" />
+                <div className="w-1.5 h-3 md:h-4 bg-white/80 rounded-full" />
+                <div className="w-1.5 h-3 md:h-4 bg-white/80 rounded-full" />
               </div>
             </div>
           </motion.div>
