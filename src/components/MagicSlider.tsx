@@ -77,7 +77,7 @@ const MagicSlider: React.FC = () => {
                 <div className="w-2.5 h-2.5 rounded-full bg-green-500/30" />
               </div>
               <div className="font-mono text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">
-                <span className="text-accent">заявка:</span> устал ловить вопросы клиентов в месенджерах. Сделай, чтобы они находили ответы на все вопросы в одном месте, но могли связаться со мной. И чтобы я мог легко обновлять данные.
+                <span className="text-accent">заявка:</span> хочу, чтоб и мобильное приложение было и в WEB открывалось. Чтоб был маркетплейс, как Wildberries, услуги как в profi.ru, и новости сами собирались из каналов Telegram.
                 <motion.span 
                   animate={{ opacity: [1, 0] }}
                   transition={{ repeat: Infinity, duration: 0.8 }}
@@ -90,59 +90,97 @@ const MagicSlider: React.FC = () => {
           {/* Foreground Layer: The UI (Revealed based on slider position) */}
           <motion.div 
             style={{ clipPath }}
-            className="absolute inset-0 bg-[#0f1117] backdrop-blur-[4px]"
+            className="absolute inset-0 bg-[#F4F7FA] backdrop-blur-[4px]"
           >
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-8 md:p-12 overflow-hidden text-white font-sans">
-              <div className="w-full max-w-2xl flex flex-col items-center gap-6 scale-[0.7] sm:scale-90 md:scale-100 transition-transform duration-500">
-                
-                {/* RAG-online Header */}
-                <h1 className="text-3xl font-bold tracking-tight">RAG-online</h1>
+            <div className="absolute inset-0 flex items-center justify-center p-2 sm:p-4 md:p-8 overflow-hidden text-black font-sans">
+              {/* BAO Mobile UI Mockup */}
+              <div className="w-[320px] h-[580px] bg-white border-[8px] border-black rounded-[40px] shadow-2xl flex flex-col overflow-hidden relative scale-[0.75] sm:scale-90 md:scale-100 transition-transform duration-500">
+                {/* Header */}
+                <div className="pt-8 px-6 pb-4 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="text-blue-600 font-black text-2xl italic">bao</div>
+                    <div className="text-[10px] text-gray-400 font-medium">USDT = 1469</div>
+                  </div>
+                  <div className="flex items-center gap-4 text-blue-600">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" /></svg>
+                    <svg className="w-6 h-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                  </div>
+                </div>
 
-                {/* Search Bar */}
-                <div className="w-full bg-[#161b22] border border-white/10 rounded-xl px-6 py-4 flex items-center justify-between shadow-lg">
-                  <span className="text-gray-300 font-medium text-lg">сколько стоит</span>
-                  <div className="flex items-center gap-4">
-                    <span className="text-gray-500 text-xl">✕</span>
-                    <div className="w-10 h-10 bg-[#5c5cfc] rounded-lg flex items-center justify-center shadow-lg shadow-accent/20">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                      </svg>
+                {/* Main Nav */}
+                <div className="flex justify-around px-2 mb-4">
+                  {['Услуги', 'Магазины', 'Товары'].map(item => (
+                    <div key={item} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50">
+                      <div className="w-3 h-3 bg-blue-600 rounded-sm" />
+                      <span className="text-[10px] font-bold text-gray-700 uppercase tracking-tight">{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex-1 overflow-y-auto px-4 space-y-6 pb-10">
+                  {/* Banner */}
+                  <div className="bg-white border border-gray-100 rounded-2xl p-4 flex items-center justify-between shadow-sm">
+                    <div className="w-16 h-16 bg-gray-50 rounded-lg flex items-center justify-center">🏃</div>
+                    <div className="text-blue-600 font-black text-lg">ВСЕ УСЛУГИ</div>
+                  </div>
+
+                  {/* Events */}
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center px-1">
+                      <h3 className="font-bold text-lg">События <span className="text-blue-600 font-normal">все</span></h3>
+                    </div>
+                    <div className="flex gap-3">
+                      <div className="flex-1 space-y-2">
+                        <div className="aspect-[4/3] bg-blue-100 rounded-xl relative overflow-hidden">
+                          <div className="absolute top-2 left-2 bg-white/90 px-2 py-1 rounded-md text-[9px] font-bold">25 мар.</div>
+                          <div className="w-full h-full flex items-center justify-center text-2xl">🧠</div>
+                        </div>
+                        <p className="text-[10px] font-bold leading-tight line-clamp-2">Квиз для англоговорящих эк...</p>
+                      </div>
+                      <div className="flex-1 space-y-2">
+                        <div className="aspect-[4/3] bg-black rounded-xl relative overflow-hidden">
+                          <div className="absolute top-2 left-2 bg-white/90 px-2 py-1 rounded-md text-[9px] font-bold">26 мар.</div>
+                          <div className="w-full h-full flex items-center justify-center text-xs font-black text-white">IMbusiness</div>
+                        </div>
+                        <p className="text-[10px] font-bold leading-tight line-clamp-2">Бизнес-разбор в подар...</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Shops */}
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center px-1">
+                      <h3 className="font-bold text-lg">Магазины <span className="text-blue-600 font-normal">все</span></h3>
+                    </div>
+                    <div className="flex gap-4">
+                      <div className="text-center space-y-2">
+                        <div className="w-16 h-16 bg-blue-900 rounded-xl flex items-center justify-center text-xs text-center p-2 text-white leading-none">cafe y mas</div>
+                        <p className="text-[9px] font-bold">Бразильский кофе</p>
+                      </div>
+                      <div className="text-center space-y-2">
+                        <div className="w-16 h-16 bg-white border border-gray-100 rounded-xl flex items-center justify-center text-2xl">🌿</div>
+                        <p className="text-[9px] font-bold">Pepino Pick</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* News Argentina */}
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center px-1">
+                      <h3 className="font-bold text-lg">Новости Аргентины <span className="text-blue-600 font-normal">все</span></h3>
+                    </div>
+                    <div className="bg-white border border-gray-100 p-3 rounded-xl shadow-sm">
+                      <p className="text-[10px] leading-snug font-medium">AFIP объявила о поднятии планки лимитов по доходам монотрибуто.</p>
                     </div>
                   </div>
                 </div>
 
-                {/* Quick Questions Chips */}
-                <div className="flex flex-col items-center gap-3 w-full">
-                  <div className="flex flex-wrap justify-center gap-3">
-                    <div className="px-4 py-2 bg-[#161b22]/50 border border-white/5 rounded-full text-[11px] text-gray-400">Где хранятся мои данные в CoinLover?</div>
-                    <div className="px-4 py-2 bg-[#161b22]/50 border border-white/5 rounded-full text-[11px] text-gray-400">Как мне зарегистрироваться в CoinLover?</div>
-                  </div>
-                  <div className="px-4 py-2 bg-[#161b22]/50 border border-white/5 rounded-full text-[11px] text-gray-400">Сколько стоит подписка на CoinLover после периода тестирования?</div>
-                </div>
-
-                {/* AI Response Card */}
-                <div className="w-full bg-[#161b22]/80 border border-white/10 rounded-2xl p-8 relative shadow-2xl">
-                  <div className="space-y-6 text-[13px] text-gray-200 leading-relaxed">
-                    <p>Для всех пользователей, подключившихся во время периода тестирования, использование приложения бесплатно навсегда. Обычная стоимость подписки составит 10 USD в год.</p>
-                    <p>Для вопросов: telegram <span className="text-accent">@argodon</span>, +5548992012727</p>
-                  </div>
-                  <div className="absolute bottom-4 right-4 p-2 bg-white/5 rounded-lg border border-white/10">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                    </svg>
+                {/* Footer attribution */}
+                <div className="absolute bottom-4 left-0 right-0 text-center">
+                  <div className="text-[8px] text-gray-400 tracking-[0.2em] uppercase">
+                    made in <span className="font-bold">Broz studio</span>
                   </div>
                 </div>
-
-                {/* Footer Buttons */}
-                <div className="flex flex-col items-center gap-4 mt-2">
-                  <div className="px-6 py-2.5 bg-[#161b22] border border-white/10 rounded-xl text-[12px] font-medium text-gray-300 cursor-pointer hover:border-accent/50 transition-colors">
-                    Создайте свой RAG в 2 клика
-                  </div>
-                  <div className="text-[10px] text-gray-600 tracking-widest uppercase">
-                    made in <span className="text-gray-400 font-bold">Broz studio</span>
-                  </div>
-                </div>
-
               </div>
             </div>
           </motion.div>
@@ -169,7 +207,7 @@ const MagicSlider: React.FC = () => {
             Вход: Заявка
           </div>
           <div className="absolute top-2 sm:top-4 right-2 sm:right-4 z-40 px-2 py-1 bg-accent/20 backdrop-blur-md rounded text-[8px] sm:text-[10px] uppercase tracking-widest text-accent-glow border border-accent/20 pointer-events-none">
-            Выход: AI-система
+            Mobile + Web
           </div>
         </div>
       </div>
