@@ -5,35 +5,35 @@ const projects = [
   {
     title: "CoinLover",
     description: "Универсальный трекер личных финансов с глубокой аналитикой в реальном времени.",
-    category: "Mobile App",
+    category: "Мобильное приложение",
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800",
     link: "https://coinlover.ru/landing"
   },
   {
     title: "Baonline",
     description: "Масштабируемый сервис для международного сообщества релокантов. Магазины, автосбор новостей.",
-    category: "Web Platform",
+    category: "Веб-платформа",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800",
-    link: "http://reloto.ru/bao-profi"
+    link: "https://bao.reloto.ru"
   },
   {
     title: "NewAddress",
     description: "MVP-витрина и система управления недвижимостью для кратковременной аренды.",
-    category: "Web App",
+    category: "Веб-приложение",
     image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
     link: "http://reloto.ru/na"
   },
   {
     title: "RAG Online",
     description: "AI-автоответчик для автоматизации малого бизнеса и коммуникаций в «одну кнопку».",
-    category: "Web App",
+    category: "Веб-приложение",
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
     link: "https://rag.reloto.ru"
   },
   {
     title: "RAG Search",
     description: "Интеллектуальный контекстный поиск по вашим файлам и документам на базе AI.",
-    category: "Web App",
+    category: "Веб-приложение",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
     link: "https://search.reloto.ru/"
   }
@@ -45,8 +45,8 @@ const projects = [
     <div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
       <div class="max-w-2xl">
         <h2 class="text-3xl md:text-5xl font-bold mb-6 tracking-tight italic uppercase">
-          <span class="text-accent block text-sm tracking-[0.3em] font-bold not-italic mb-2">Expertise in Action</span>
-          Selected Cases
+          <span class="text-accent block text-sm tracking-[0.3em] font-bold not-italic mb-2">Экспертиза в действии</span>
+          Избранные кейсы
         </h2>
         <p class="text-gray-400 text-lg leading-relaxed">
           Проекты, которые решают реальные боли бизнеса через автоматизацию, <br class="hidden md:block" /> 
@@ -59,11 +59,12 @@ const projects = [
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {projects.map((project) => (
+      {projects.map((project, index) => (
         <a 
           href={project.link} 
           target="_blank"
-          class="group block bg-surface border border-border-primary rounded-container overflow-hidden hover:border-accent/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl"
+          class="reveal group block bg-surface border border-border-primary rounded-container overflow-hidden hover:border-accent/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl"
+          style={`transition-delay: ${index * 100}ms`}
         >
           <div class="relative aspect-[4/3] overflow-hidden">
             <img 
@@ -91,7 +92,7 @@ const projects = [
             </p>
             
             <div class="flex items-center gap-2 text-accent text-sm font-bold uppercase tracking-widest overflow-hidden">
-              <span class="translate-x-0 group-hover:translate-x-1 transition-transform duration-300">Explore Case</span>
+              <span class="translate-x-0 group-hover:translate-x-1 transition-transform duration-300">Подробнее</span>
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 -translate-x-1 group-hover:translate-x-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
