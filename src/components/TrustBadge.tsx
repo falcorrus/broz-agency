@@ -17,7 +17,7 @@ export const TrustBadge = () => {
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
     >
       <div className="w-1.5 h-1.5 bg-accent/40 rounded-full"></div>
-      <span className="font-semibold tracking-widest uppercase">Verified Expert @flutterflow_rus</span>
+      <span className="font-semibold tracking-widest uppercase">Эксперт @flutterflow_rus</span>
     </motion.a>
   );
 };

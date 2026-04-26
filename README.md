@@ -1,9 +1,8 @@
 # Broz Agency (broz.agency)
+# broz.agency landing page
 
-Персональный сайт-визитка Евгения Киршина (Broz), Full Cycle Product Engineer и основателя сообщества «FlutterFlow Rus».
-
-## 🎯 О проекте
-Сайт позиционирует владельца как эксперта, создающего прибыльные IT-решения (Mobile, Web, AI Automation) за 24 часа. Основной акцент сделан на интерактивном доказательстве скорости (Magic Slider) и визуальном портфолио кейсов.
+Сайт-визитка Broz Studio (Full Cycle Product Engineering). 
+Сайт позиционирует команду как экспертов, создающих прибыльные IT-решения (Mobile, Web, AI Automation) за 24 часа. Основной акцент сделан на интерактивном доказательстве скорости (Magic Slider) и визуальном портфолио кейсов.
 
 ## 🛠 Технологический стек
 - **Frontend:** Astro 6 (SSG) + React 19

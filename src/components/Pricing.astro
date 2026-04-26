@@ -1,0 +1,101 @@
+---
+// src/components/Pricing.astro
+
+const plans = [
+  {
+    name: "Старт MVP",
+    price: "$1,500",
+    description: "Быстрая проверка гипотезы. Прототип, UI/UX и первая работающая версия за 48 часов.",
+    features: [
+      "Проектирование логики",
+      "UI/UX Дизайн (Figma/AI)",
+      "Разработка MVP (Astro/React)",
+      "Базовая SEO-оптимизация",
+      "Деплой на ваш сервер"
+    ],
+    highlight: false,
+    cta: "Заказать MVP"
+  },
+  {
+    name: "Полный продукт",
+    price: "$4,500",
+    description: "Полноценный продукт с масштабируемой архитектурой и глубокой проработкой UX.",
+    features: [
+      "Все из MVP Start",
+      "Backend разработка (Supabase/Node)",
+      "Интеграция AI-моделей",
+      "Система аналитики",
+      "Поддержка 1 месяц"
+    ],
+    highlight: true,
+    cta: "Запустить продукт"
+  },
+  {
+    name: "AI-автоматизация",
+    price: "Индивидуально",
+    description: "Автоматизация сложных бизнес-процессов с использованием LLM и кастомных RAG-систем.",
+    features: [
+      "Аудит процессов",
+      "Сценарии n8n / Python",
+      "RAG (Поиск по документам)",
+      "AI-агенты для Telegram/Web",
+      "Интеграция с CRM/API"
+    ],
+    highlight: false,
+    cta: "Обсудить проект"
+  }
+];
+---
+
+<section id="pricing" class="py-24 px-6 bg-background">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-20">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6 italic uppercase tracking-tight">
+        Цены и <span class="text-accent not-italic">пакеты</span>
+      </h2>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        Прозрачная стоимость без скрытых платежей. <br class="hidden md:block" /> 
+        Мы фокусируемся на результате, который приносит прибыль.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+      {plans.map((plan) => (
+        <div class={`group relative p-8 bg-surface border rounded-container transition-all duration-500 flex flex-col ${plan.highlight ? 'border-accent ring-1 ring-accent/30 scale-105 z-10' : 'border-border-primary hover:border-accent/30'}`}>
+          {plan.highlight && (
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg">
+              Популярно
+            </div>
+          )}
+          
+          <div class="mb-8">
+            <h3 class="text-xl font-bold mb-2 group-hover:text-accent transition-colors">{plan.name}</h3>
+            <div class="flex items-baseline gap-1 mb-4">
+              <span class="text-4xl font-black text-white">{plan.price}</span>
+              {plan.price !== "Индивидуально" && <span class="text-gray-500 text-sm">/ проект</span>}
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed">{plan.description}</p>
+          </div>
+
+          <ul class="space-y-4 mb-10 flex-1">
+            {plan.features.map((feature) => (
+              <li class="flex items-start gap-3 text-sm text-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+
+          <a 
+            href="#contact" 
+            class={`w-full py-4 font-bold rounded-button text-center transition-all hover:scale-[1.02] active:scale-[0.98] ${plan.highlight ? 'bg-accent text-white shadow-lg shadow-accent/20' : 'bg-white/5 text-white border border-border-primary hover:border-accent/50'}`}
+          >
+            {plan.cta}
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

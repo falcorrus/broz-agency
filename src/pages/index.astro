@@ -6,15 +6,40 @@ import Contact from '../components/Contact.astro';
 import { TrustBadge } from '../components/TrustBadge';
 import MagicSlider from '../components/MagicSlider';
 import Process from '../components/Process.astro';
+import About from '../components/About.astro';
+import Pricing from '../components/Pricing.astro';
 ---
 
-<Layout title="broz.agency | Превращаю задачи в прибыль">
+<Layout title="broz.agency | Превращаем задачи в прибыль">
   <main class="relative">
-    <Hero />
-    <MagicSlider client:load />
-    <Process />
-    <Portfolio />
+    <section class="reveal">
+      <Hero />
+    </section>
+    
+    <section class="reveal">
+      <MagicSlider client:load />
+    </section>
+    
+    <section id="process" class="reveal">
+      <Process />
+    </section>
+    
+    <section id="about" class="reveal">
+      <About />
+    </section>
+    
+    <section id="pricing" class="reveal">
+      <Pricing />
+    </section>
+    
+    <section id="portfolio" class="reveal">
+      <Portfolio />
+    </section>
+    
     <TrustBadge client:load />
-    <Contact />
+    
+    <section id="contact" class="reveal">
+      <Contact />
+    </section>
   </main>
 </Layout>

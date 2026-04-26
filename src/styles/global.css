@@ -13,6 +13,17 @@
   --radius-button: 14px;
 
   /* Animations */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   @keyframes fade-in-down {
     from {
       opacity: 0;
@@ -46,8 +57,28 @@
   }
 }
 
+/* Scroll Animation Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header-scrolled {
+  @apply bg-background/80 backdrop-blur-md border-b border-white/10;
+}
+
 .animate-fade-in-down {
   animation: fade-in-down 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
 }
 
 .animate-pulse-green {

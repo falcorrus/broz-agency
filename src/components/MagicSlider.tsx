@@ -178,7 +178,7 @@ const MagicSlider: React.FC = () => {
                 {/* Footer attribution */}
                 <div className="absolute bottom-4 left-0 right-0 text-center">
                   <div className="text-[8px] text-gray-400 tracking-[0.2em] uppercase">
-                    made in <span className="font-bold">Broz studio</span>
+                    сделано в <span className="font-bold">Broz studio</span>
                   </div>
                 </div>
               </div>
@@ -207,7 +207,7 @@ const MagicSlider: React.FC = () => {
             Вход: Заявка
           </div>
           <div className="absolute top-2 sm:top-4 right-2 sm:right-4 z-40 px-2 py-1 bg-accent/20 backdrop-blur-md rounded text-[8px] sm:text-[10px] uppercase tracking-widest text-accent-glow border border-accent/20 pointer-events-none">
-            Mobile + Web
+            Мобильное + Веб
           </div>
         </div>
       </div>
