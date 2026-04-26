@@ -4,97 +4,103 @@
 const projects = [
   {
     title: "CoinLover",
-    description: "Универсальный трекер личных финансов с глубокой аналитикой в реальном времени.",
-    category: "Мобильное приложение",
+    description: "Автономный трекер личных финансов. Владение данными через локальное шифрование и real-time аналитику.",
+    category: "Mobile / Fintech",
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800",
-    link: "https://coinlover.ru/landing"
+    link: "https://coinlover.ru/landing",
+    size: "large" // 2x2
   },
   {
     title: "Baonline",
-    description: "Масштабируемый сервис для международного сообщества релокантов. Магазины, автосбор новостей.",
-    category: "Веб-платформа",
+    description: "Децентрализованный хаб для релокантов: от магазинов до автосбора данных.",
+    category: "Web Platform",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800",
-    link: "https://bao.reloto.ru"
+    link: "https://bao.reloto.ru",
+    size: "normal"
   },
   {
     title: "NewAddress",
-    description: "MVP-витрина и система управления недвижимостью для кратковременной аренды.",
-    category: "Веб-приложение",
+    description: "MVP-система управления real-estate активами без посредников.",
+    category: "PropTech",
     image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
-    link: "http://reloto.ru/na"
+    link: "http://reloto.ru/na",
+    size: "normal"
   },
   {
     title: "RAG Online",
-    description: "AI-автоответчик для автоматизации малого бизнеса и коммуникаций в «одну кнопку».",
-    category: "Веб-приложение",
+    description: "Суверенный AI-автоответчик: ваш бизнес, ваши правила, ваши LLM-модели.",
+    category: "AI / Automation",
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
-    link: "https://rag.reloto.ru"
+    link: "https://rag.reloto.ru",
+    size: "wide" // 2x1
   },
   {
     title: "RAG Search",
-    description: "Интеллектуальный контекстный поиск по вашим файлам и документам на базе AI.",
-    category: "Веб-приложение",
+    description: "Интеллектуальный поиск по локальным архивам документов.",
+    category: "Tooling",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
-    link: "https://search.reloto.ru/"
+    link: "https://search.reloto.ru/",
+    size: "normal"
   }
 ];
 ---
 
-<section id="portfolio" class="py-24 px-6 bg-background">
-  <div class="max-w-7xl mx-auto">
-    <div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
-      <div class="max-w-2xl">
-        <h2 class="text-3xl md:text-5xl font-bold mb-6 tracking-tight italic uppercase">
-          <span class="text-accent block text-sm tracking-[0.3em] font-bold not-italic mb-2">Экспертиза в действии</span>
-          Избранные кейсы
-        </h2>
-        <p class="text-gray-400 text-lg leading-relaxed">
-          Проекты, которые решают реальные боли бизнеса через автоматизацию, <br class="hidden md:block" /> 
-          чистый UX и масштабируемую архитектуру.
-        </p>
-      </div>
-      <div class="pb-1">
-        <div class="w-32 h-[1px] bg-gradient-to-r from-accent to-transparent"></div>
-      </div>
+<section id="portfolio" class="py-32 px-6 bg-background relative overflow-hidden">
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="mb-20">
+      <h2 class="text-4xl md:text-6xl font-heading mb-6 tracking-tight italic">
+        Избранные <span class="text-accent not-italic font-bold">Кейсы.</span>
+      </h2>
+      <p class="text-slate-400 text-lg max-w-2xl font-light">
+        Проекты, которые решают реальные боли бизнеса через автоматизацию, <br class="hidden md:block" /> 
+        чистый UX и масштабируемую архитектуру.
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
       {projects.map((project, index) => (
         <a 
           href={project.link} 
           target="_blank"
-          class="reveal group block bg-surface border border-border-primary rounded-container overflow-hidden hover:border-accent/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl"
+          class:list={[
+            "reveal group glass-panel rounded-container overflow-hidden flex flex-col relative",
+            {
+              "md:col-span-2 md:row-span-2": project.size === "large",
+              "md:col-span-2": project.size === "wide",
+              "md:col-span-1": project.size === "normal"
+            }
+          ]}
           style={`transition-delay: ${index * 100}ms`}
         >
-          <div class="relative aspect-[4/3] overflow-hidden">
+          <!-- Background Image with Overlay -->
+          <div class="absolute inset-0 z-0">
             <img 
               src={project.image} 
               alt={project.title}
-              class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
+              class="w-full h-full object-cover grayscale opacity-20 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110 group-hover:opacity-40"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"></div>
-            
-            <!-- Category Badge overlay -->
-            <div class="absolute top-4 left-4">
-              <span class="bg-background/80 backdrop-blur-md text-accent text-[10px] uppercase tracking-widest font-bold px-3 py-1.5 rounded-full border border-accent/20">
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+          </div>
+          
+          <div class="relative z-10 p-8 mt-auto">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-[10px] font-mono text-accent uppercase tracking-widest px-2 py-1 border border-accent/20 bg-accent/5 rounded">
                 {project.category}
               </span>
             </div>
-          </div>
-          
-          <div class="p-8">
-            <h3 class="text-2xl font-bold mb-3 group-hover:text-accent transition-colors">
+            
+            <h3 class="text-3xl font-heading mb-3 group-hover:text-white transition-colors">
               {project.title}
             </h3>
             
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            <p class="text-slate-400 text-sm leading-relaxed mb-6 max-w-md opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
               {project.description}
             </p>
             
-            <div class="flex items-center gap-2 text-accent text-sm font-bold uppercase tracking-widest overflow-hidden">
-              <span class="translate-x-0 group-hover:translate-x-1 transition-transform duration-300">Подробнее</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 -translate-x-1 group-hover:translate-x-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            <div class="flex items-center gap-2 text-white text-[10px] font-bold uppercase tracking-widest">
+              <span>Explore Module</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </div>
           </div>
