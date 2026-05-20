@@ -3,43 +3,44 @@
 
 const plans = [
   {
-    name: "Start MVP",
-    price: "$500",
-    description: "Rapid hypothesis validation. Functional prototype, UI/UX, and your first working release in 48 hours.",
+    name: "Start / Landing MVP",
+    price: "$500 - $1500",
+    description: "For hypothesis testing, ad campaigns, and lead generation.",
     features: [
-      "Process & logic mapping",
-      "UI/UX Design (Figma/AI)",
-      "MVP Development (Astro/React)",
-      "Basic SEO optimization",
-      "Deployment to your hosting"
+      "<b>Scope:</b> Landing page or MVP up to 5 screens.",
+      "<b>Design:</b> Responsive UI/UX (choice from 4 variants).",
+      "<b>Conversion:</b> Basic lead capture forms (Telegram/Email/Google Sheets).",
+      "<b>SEO & Infra:</b> Basic SEO setup, domain configuration, deployment to Vercel/Beget.",
+      "<b>Timeline:</b> Up to 96 hours; 2 major revisions under warranty."
     ],
     highlight: false,
     cta: "Order MVP"
   },
   {
-    name: "Full Product",
-    price: "$4500",
-    description: "A complete, production-ready digital asset with highly scalable architecture and rich UX.",
+    name: "Growth / Full Product",
+    price: "$3000 - $5000",
+    description: "For launching a full-fledged SaaS, marketplace, or complex corporate service.",
     features: [
-      "Everything in Start MVP",
-      "Backend development (Supabase/Node)",
-      "Advanced AI integration",
-      "Analytics & tracking setup",
-      "1 month post-launch support"
+      "<b>Scope:</b> Multi-page application or SPA with routing (up to 15 screens).",
+      "<b>Design:</b> Deep UX research, custom design system.",
+      "<b>Backend & Data:</b> DB architecture, Supabase integration, Auth, Payment processing.",
+      "<b>Analytics:</b> End-to-end analytics (GA4, custom events).",
+      "<b>Timeline:</b> 2-4 weeks; 1 month of post-launch support and bug fixes."
     ],
     highlight: true,
     cta: "Launch Product"
   },
   {
-    name: "AI Automation",
-    price: "Custom",
-    description: "Automation of complex business workflows leveraging LLMs, custom agents, and RAG systems.",
+    name: "Advanced / AI",
+    price: "from $5000",
+    description: "For businesses looking to optimize costs or integrate AI under the hood.",
     features: [
-      "Operational workflow audit",
-      "n8n / Python scripting",
-      "RAG (Document search)",
-      "AI Agents (Telegram/Web)",
-      "CRM & custom API integrations"
+      "<b>Audit:</b> Deep analysis of the company's business processes.",
+      "<b>AI Integrations:</b> Custom business integrations, extensive LLM implementation.",
+      "<b>Automation:</b> Script development (e.g., auto-replies, report generation).",
+      "<b>Agents:</b> Telegram bots or web agents with memory and logic.",
+      "<b>Integrations:</b> Connection to any existing CRM/ERP via API.",
+      "<b>Support:</b> Up to 3 months of warranty support and bug fixes."
     ],
     highlight: false,
     cta: "Discuss Project"
@@ -75,11 +76,9 @@ const plans = [
           )}
           
           <div class="mb-10">
-            <span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest block mb-2">Module {index + 1}</span>
             <h3 class="text-2xl font-heading font-bold mb-4 text-white group-hover:text-accent transition-colors italic">{plan.name}</h3>
             <div class="flex items-baseline gap-2 mb-6">
-              <span class="text-5xl font-heading font-black text-white italic tracking-tighter">{plan.price}</span>
-              {plan.price !== "Custom" && <span class="text-slate-500 text-[10px] font-mono uppercase tracking-widest">/ asset</span>}
+              <span class="text-4xl md:text-5xl font-heading font-black text-white italic tracking-tighter">{plan.price}</span>
             </div>
             <p class="text-slate-500 text-sm leading-relaxed font-light">{plan.description}</p>
           </div>
@@ -90,7 +89,7 @@ const plans = [
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-accent/60 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                {feature}
+                <span set:html={feature} />
               </li>
             ))}
           </ul>
@@ -108,6 +107,11 @@ const plans = [
           </a>
         </div>
       ))}
+    </div>
+
+    <div class="mt-16 text-center text-xs text-slate-500/60 max-w-3xl mx-auto space-y-2">
+      <p>* Cost largely depends on the volume and quality of materials provided by the client, fixed upfront for the entire project.</p>
+      <p>* Server/hosting, domain purchase, and paid APIs (e.g., OpenAI) are covered by the client and discussed separately.</p>
     </div>
   </div>
 </section>

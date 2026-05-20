@@ -3,43 +3,44 @@
 
 const plans = [
   {
-    name: "Старт MVP",
-    price: "$500",
-    description: "Быстрая проверка гипотезы. Прототип, UI/UX и первая работающая версия за 48 часов.",
+    name: "Старт / Landing MVP",
+    price: "$500 - $1500",
+    description: "Для тестирования гипотез, запуска рекламы и сбора заявок.",
     features: [
-      "Проектирование логики",
-      "UI/UX Дизайн (Figma/AI)",
-      "Разработка MVP (Astro/React)",
-      "Базовая SEO-оптимизация",
-      "Деплой на ваш сервер"
+      "<b>Объем:</b> лендинг или MVP до 5 экранов/страниц.",
+      "<b>Дизайн:</b> Адаптивный UI/UX (выбор из 4 вариантов).",
+      "<b>Конверсия:</b> базовые формы захвата лидов (отправка в Telegram/Email/Google sheets).",
+      "<b>SEO & Инфраструктура:</b> Базовая SEO-настройка, настройка домена, деплой на Vercel/Beget.",
+      "<b>Срок:</b> до 96 часов; 2 большие корректировки по гарантии."
     ],
     highlight: false,
     cta: "Заказать MVP"
   },
   {
-    name: "Полный продукт",
-    price: "$4500",
-    description: "Полноценный продукт с масштабируемой архитектурой и глубокой проработкой UX.",
+    name: "Growth / Полноценный продукт",
+    price: "$3000 - $5000",
+    description: "Для запуска полноценного SaaS, маркетплейса или сложного корпоративного сервиса.",
     features: [
-      "Все из MVP Start",
-      "Backend разработка (Supabase/Node)",
-      "Интеграция AI-моделей",
-      "Система аналитики",
-      "Поддержка 1 месяц"
+      "<b>Объем:</b> Многостраничное приложение или SPA с роутингом (до 15 экранов).",
+      "<b>Дизайн:</b> Глубокая проработка UX, кастомный дизайн-код.",
+      "<b>Backend & Данные:</b> Разработка архитектуры БД, подключение Supabase, авторизация (Auth), интеграция оплат.",
+      "<b>Аналитика:</b> сквозная аналитика (GA4, кастомные события).",
+      "<b>Срок:</b> 2-4 недели; 1 месяц гарантийной поддержки и багфикса."
     ],
     highlight: true,
     cta: "Запустить продукт"
   },
   {
-    name: "AI-автоматизация",
-    price: "Custom",
-    description: "Автоматизация сложных бизнес-процессов с использованием LLM и кастомных RAG-систем.",
+    name: "Advanced / AI",
+    price: "от $5000",
+    description: "Для бизнеса, которому нужно оптимизировать косты или внедрить AI под капот.",
     features: [
-      "Аудит процессов",
-      "Сценарии n8n / Python",
-      "RAG (Поиск по документам)",
-      "AI-агенты для Telegram/Web",
-      "Интеграция с CRM/API"
+      "<b>Аудит:</b> Глубокий анализ бизнес-процессов компании.",
+      "<b>AI-интеграции:</b> Разработка интеграций в бизнес клиента, широкое внедрение LLM.",
+      "<b>Автоматизация:</b> разработка скриптов (например, авто-ответы клиентам, генерация отчетов).",
+      "<b>Агенты:</b> Разработка Telegram-ботов или веб-агентов с \"памятью\" и логикой.",
+      "<b>Интеграции:</b> Связка с любой существующей CRM/ERP по API.",
+      "<b>Поддержка:</b> до 3 месяцев гарантийной поддержки и багфикса."
     ],
     highlight: false,
     cta: "Обсудить проект"
@@ -75,11 +76,9 @@ const plans = [
           )}
           
           <div class="mb-10">
-            <span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest block mb-2">Module {index + 1}</span>
             <h3 class="text-2xl font-heading font-bold mb-4 text-white group-hover:text-accent transition-colors italic">{plan.name}</h3>
             <div class="flex items-baseline gap-2 mb-6">
-              <span class="text-5xl font-heading font-black text-white italic tracking-tighter">{plan.price}</span>
-              {plan.price !== "Custom" && <span class="text-slate-500 text-[10px] font-mono uppercase tracking-widest">/ asset</span>}
+              <span class="text-4xl md:text-5xl font-heading font-black text-white italic tracking-tighter">{plan.price}</span>
             </div>
             <p class="text-slate-500 text-sm leading-relaxed font-light">{plan.description}</p>
           </div>
@@ -90,7 +89,7 @@ const plans = [
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-accent/60 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                {feature}
+                <span set:html={feature} />
               </li>
             ))}
           </ul>
@@ -108,6 +107,11 @@ const plans = [
           </a>
         </div>
       ))}
+    </div>
+
+    <div class="mt-16 text-center text-xs text-slate-500/60 max-w-3xl mx-auto space-y-2">
+      <p>*Стоимость во многом зависит от количества и качества материалов, предоставленных заказчиком, фиксируется сразу на весь проект.</p>
+      <p>*сервер/хостинг, покупка домена и платные API (например, OpenAI) оплачиваются клиентом обсуждаются.</p>
     </div>
   </div>
 </section>
