@@ -45,7 +45,7 @@ export default function WaveText({ texts }: WaveTextProps) {
         }}
         className="absolute top-0 bottom-0 w-32 pointer-events-none z-20"
         style={{
-          background: 'radial-gradient(circle, rgba(14,165,233,0.4) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, var(--color-accent) 0%, transparent 70%)',
           filter: 'blur(20px)',
           mixBlendMode: 'screen'
         }}

@@ -1,0 +1,20 @@
+---
+// src/components/en/ProcessEn.astro
+import ProcessCardsEn from './ProcessCardsEn';
+---
+
+<section id="process" class="py-32 px-6 bg-background relative overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-24">
+      <h2 class="text-4xl md:text-6xl font-heading mb-6 tracking-tight italic text-white uppercase">
+        Your path <span class="text-accent not-italic font-bold">to the product.</span>
+      </h2>
+      <p class="text-slate-400 text-lg max-w-3xl mx-auto font-light leading-relaxed">
+        Transparent process from the first call to a fully working system. <br class="hidden md:block" /> 
+        Maximum velocity without compromising quality.
+      </p>
+    </div>
+
+    <ProcessCardsEn client:load />
+  </div>
+</section>

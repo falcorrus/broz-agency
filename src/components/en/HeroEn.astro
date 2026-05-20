@@ -1,0 +1,59 @@
+---
+// src/components/en/HeroEn.astro
+import WaveText from '../WaveText';
+---
+
+<section class="relative min-h-[95vh] flex flex-col items-center justify-center px-6 overflow-hidden pt-20">
+  <!-- Subtle Grid Overlay -->
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(124,58,237,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(124,58,237,0.06)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] opacity-30"></div>
+    
+    <!-- Multi-layered Violet Premium Glows -->
+    <div class="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-accent/10 rounded-full blur-[140px] opacity-70"></div>
+    <div class="absolute bottom-[20%] left-[20%] w-[300px] h-[300px] bg-accent/5 rounded-full blur-[100px] opacity-50"></div>
+  </div>
+
+  <div class="relative z-10 max-w-6xl mx-auto text-center">
+    <!-- Authority Badge in Premium Pill Style -->
+    <div class="reveal inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/5 mb-10 animate-fade-in-down backdrop-blur-md">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+      </span>
+      <span class="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-glow">Product Engineering 2.0</span>
+    </div>
+
+    <!-- Oversized clamp-based typography for hero heading -->
+    <h1 class="text-6xl md:text-[6.5rem] lg:text-[8.5rem] font-heading font-black tracking-[-0.04em] mb-10 leading-[0.9] text-white">
+      Turning tasks <br />
+      <WaveText client:load texts={["into profit.", "into assets.", "into results."]} />
+    </h1>
+
+    <p class="text-lg md:text-2xl text-slate-400 max-w-3xl mx-auto mb-14 leading-relaxed font-light font-body">
+      We build premium digital assets and autonomous AI agents <br class="hidden md:block" /> 
+      that save your time and scale your business.
+    </p>
+
+    <!-- Luxury CTAs with floating glass effect -->
+    <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-6" style="transition-delay: 200ms">
+      <a 
+        href="#contact" 
+        class="group relative px-10 py-4.5 bg-accent hover:bg-accent/90 text-white font-semibold text-xs uppercase tracking-widest rounded-button overflow-hidden transition-all hover:shadow-[0_0_35px_-5px_var(--color-accent)] active:scale-95 duration-300"
+      >
+        Launch the Process
+      </a>
+      <a 
+        href="#portfolio" 
+        class="px-10 py-4.5 bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white font-semibold text-xs uppercase tracking-widest rounded-button border border-border-primary hover:border-accent/40 backdrop-blur-md transition-all active:scale-95 duration-300"
+      >
+        Explore Solutions
+      </a>
+    </div>
+  </div>
+  
+  <!-- Premium Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 text-slate-600 opacity-40">
+    <span class="text-[9px] uppercase tracking-[0.3em] font-bold">Scroll</span>
+    <div class="w-[1px] h-14 bg-gradient-to-b from-accent to-transparent"></div>
+  </div>
+</section>

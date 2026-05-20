@@ -19,3 +19,9 @@
 - Astro 6, React 19, Tailwind v4, Framer Motion.
 - Docker, Nginx, VPS (Beget/Ubuntu).
 - Domain: https://broz.agency
+
+## 📂 Техническая документация
+- [[!Docs/!! broz.agency ГЛАВНАЯ]] — Карта всей документации проекта.
+- [[!Docs/02_ARCHITECTURE|02_ARCHITECTURE]] — Подробности стека и архитектуры.
+- [[!Docs/03_DEPLOYMENT_OPS|03_DEPLOYMENT_OPS]] — Инструкции по деплою и Docker.
+- [[!Docs/05_DECISIONS_LOG|05_DECISIONS_LOG]] — История решений.

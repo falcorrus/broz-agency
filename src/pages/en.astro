@@ -1,0 +1,46 @@
+---
+// src/pages/en.astro
+import Layout from '../layouts/Layout.astro';
+import HeroEn from '../components/en/HeroEn.astro';
+import MagicSliderEn from '../components/en/MagicSliderEn';
+import ProcessEn from '../components/en/ProcessEn.astro';
+import AboutEn from '../components/en/AboutEn.astro';
+import PricingEn from '../components/en/PricingEn.astro';
+import PortfolioEn from '../components/en/PortfolioEn.astro';
+import TrustBadgeEn from '../components/en/TrustBadgeEn';
+import ContactEn from '../components/en/ContactEn.astro';
+---
+
+<Layout title="broz.agency | Turning tasks into assets" lang="en">
+  <main class="relative">
+    <section class="reveal">
+      <HeroEn />
+    </section>
+    
+    <section class="reveal">
+      <MagicSliderEn client:load />
+    </section>
+    
+    <section id="process" class="reveal">
+      <ProcessEn />
+    </section>
+    
+    <section id="about" class="reveal">
+      <AboutEn />
+    </section>
+    
+    <section id="pricing" class="reveal">
+      <PricingEn />
+    </section>
+    
+    <section id="portfolio" class="reveal">
+      <PortfolioEn />
+    </section>
+    
+    <TrustBadgeEn client:load />
+    
+    <section id="contact" class="reveal">
+      <ContactEn />
+    </section>
+  </main>
+</Layout>

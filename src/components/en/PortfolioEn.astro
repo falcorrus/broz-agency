@@ -1,0 +1,111 @@
+---
+// src/components/en/PortfolioEn.astro
+
+const projects = [
+  {
+    title: "CoinLover",
+    description: "Autonomous personal finance tracker. Ultimate data ownership through local encryption and real-time analytics.",
+    category: "Mobile / Fintech",
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800",
+    link: "https://coinlover.ru/landing",
+    size: "large" // 2x2
+  },
+  {
+    title: "Baonline",
+    description: "A decentralized community hub for relocants: from local service directories to automated data scraping pipelines.",
+    category: "Web Platform",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800",
+    link: "https://bao.reloto.ru",
+    size: "normal"
+  },
+  {
+    title: "NewAddress",
+    description: "A secure PropTech MVP platform designed for direct peer-to-peer real estate asset management.",
+    category: "PropTech",
+    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
+    link: "https://newaddress.glide.page/",
+    size: "normal"
+  },
+  {
+    title: "RAG Online",
+    description: "One-click AI assistant designed to automate customer communications and small business processes.",
+    category: "AI / Automation",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
+    link: "https://rag.reloto.ru",
+    size: "wide" // 2x1
+  },
+  {
+    title: "RAG Search",
+    description: "Intelligent cognitive search engine powered by vector indexing on top of local documentation archives.",
+    category: "Tooling",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+    link: "https://search.reloto.ru/",
+    size: "normal"
+  }
+];
+---
+
+<section id="portfolio" class="py-32 px-6 bg-background relative overflow-hidden">
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="mb-20">
+      <h2 class="text-4xl md:text-6xl font-heading mb-6 tracking-tight italic text-white uppercase">
+        Selected <span class="text-accent not-italic font-bold">Cases.</span>
+      </h2>
+      <p class="text-slate-400 text-lg max-w-2xl font-light leading-relaxed">
+        Projects that solve real business friction through automation, <br class="hidden md:block" /> 
+        flawless UX, and clean, scalable architectures.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+      {projects.map((project, index) => (
+        <a 
+          href={project.link} 
+          target="_blank"
+          class:list={[
+            "reveal group glass-panel rounded-container overflow-hidden flex flex-col relative",
+            {
+              "md:col-span-2 md:row-span-2": project.size === "large",
+              "md:col-span-2": project.size === "wide",
+              "md:col-span-1": project.size === "normal"
+            }
+          ]}
+          style={`transition-delay: ${index * 100}ms`}
+        >
+          <!-- Background Image with Overlay -->
+          <div class="absolute inset-0 z-0">
+            <img 
+              src={project.image} 
+              alt={project.title}
+              class="w-full h-full object-cover grayscale opacity-20 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110 group-hover:opacity-40"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+          </div>
+          
+          <div class="relative z-10 p-8 mt-auto">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-[10px] font-mono text-accent uppercase tracking-widest px-2 py-1 border border-accent/20 bg-accent/5 rounded">
+                {project.category}
+              </span>
+            </div>
+            
+            <h3 class="text-3xl font-heading mb-3 group-hover:text-white transition-colors text-white">
+              {project.title}
+            </h3>
+            
+            <p class="text-slate-400 text-sm leading-relaxed mb-6 max-w-md opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+              {project.description}
+            </p>
+            
+            <div class="flex items-center gap-2 text-white text-[10px] font-bold uppercase tracking-widest">
+              <span>Explore Module</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

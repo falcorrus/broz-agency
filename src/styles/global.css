@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
 @theme {
   /* Sovereign Colors - Deep Blue/Black Base */
@@ -30,6 +30,18 @@
     0% { background-position: -200% 0; }
     100% { background-position: 200% 0; }
   }
+}
+
+/* English Version - Dark Glassmorphism Premium Style Overrides */
+.theme-en {
+  --color-background: #000000;      /* Pure OLED Black */
+  --color-accent: #7c3aed;          /* Premium Violet */
+  --color-accent-glow: #a78bfa;     /* Violet light */
+  --color-surface: #0c0a09;         /* Stone-950 Deep Obsidian */
+  --color-border-primary: rgba(255, 255, 255, 0.09); /* Subtle transparent borders */
+  
+  --font-heading: "DM Sans", sans-serif;
+  --font-body: "Inter", sans-serif;
 }
 
 @layer base {

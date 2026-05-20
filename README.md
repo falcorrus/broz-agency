@@ -1,40 +1,35 @@
 # Broz Agency (broz.agency)
-# broz.agency landing page
 
-Сайт-визитка Broz Studio (Full Cycle Product Engineering). 
-Сайт позиционирует команду как экспертов, создающих прибыльные IT-решения (Mobile, Web, AI Automation) за 24 часа. Основной акцент сделан на интерактивном доказательстве скорости (Magic Slider) и визуальном портфолио кейсов.
+Персональный лендинг-визитка команды **Broz Studio** (Full Cycle Product Engineering). Мы создаем прибыльные IT-решения (Mobile, Web, AI Automation) в рекордные сроки.
 
-## 🛠 Технологический стек
-- **Frontend:** Astro 6 (SSG) + React 19
-- **Styling:** Tailwind CSS v4 + Framer Motion (анимации)
-- **Containerization:** Docker (nginx:alpine, non-root security)
-- **Hosting:** Собственный VPS (Ubuntu)
-- **Deployment:** GitHub -> VPS via `deploy.sh`
+---
 
-## 📂 Структура проекта
-- `src/components/`:
-    - `Hero.astro` — Главный экран с оффером.
-    - `MagicSlider.tsx` — Интерактивный слайдер «Заявка → AI-система».
-    - `Portfolio.astro` — Витрина проектов (Mobile, Web, Automation).
-    - `Contact.astro` — Форма связи с пульсирующим статусом доступности.
-    - `TrustBadge.tsx` — Полупрозрачный бейдж эксперта.
-- `nginx.conf`: Настройки безопасности (CSP, HSTS, Gzip).
-- `deploy.sh`: Скрипт автоматизации деплоя.
+## 📚 Документация проекта
 
-## 🚀 Как работать с проектом
+Вся подробная информация о проекте теперь находится в директории `!Docs`:
 
-### Локальная разработка
+1. **[!! broz.agency ГЛАВНАЯ.md](./!Docs/!! broz.agency ГЛАВНАЯ.md)** — Главная страница и карта документации.
+2. **[01_PRODUCT_VISION.md](./!Docs/01_PRODUCT_VISION.md)** — Видение, цели и USP.
+3. **[02_ARCHITECTURE.md](./!Docs/02_ARCHITECTURE.md)** — Технический стек и структура.
+4. **[03_DEPLOYMENT_OPS.md](./!Docs/03_DEPLOYMENT_OPS.md)** — Инструкции по запуску и деплою.
+5. **[04_PORTFOLIO_DATA.md](./!Docs/04_PORTFOLIO_DATA.md)** — Проекты в портфолио.
+6. **[05_DECISIONS_LOG.md](./!Docs/05_DECISIONS_LOG.md)** — Лог технических решений.
+
+---
+
+## 🚀 Быстрый старт
+
+### Локально
 ```bash
 npm install
 npm run dev
 ```
 
-### Деплой на сервер
+### Деплой
 ```bash
 ./deploy.sh
 ```
-*Скрипт автоматически запушит изменения в main, зайдет на VPS, подтянет код и перезапустит Docker-контейнер.*
 
-## 🐳 Docker
-Проект работает на порту **8020** (хост) -> **8080** (контейнер).
-Управление через `docker-compose.yml`.
+---
+*Для автоматизации и инструкций для Gemini см. [GEMINI.md](./GEMINI.md).*
+
