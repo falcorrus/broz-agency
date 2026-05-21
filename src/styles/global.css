@@ -41,8 +41,20 @@
   --color-border-primary: rgba(255, 255, 255, 0.09); /* Subtle transparent borders */
   
   --font-heading: "DM Sans", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-body: "DM Sans", sans-serif; /* DM Sans is rounder, highly readable, and looks extremely premium at body size */
+
+  /* Shift slate and gray colors to brighter values in English version to improve color contrast on OLED Black (#000000) */
+  --color-slate-400: #cbd5e1; /* maps to slate-300 */
+  --color-slate-500: #94a3b8; /* maps to slate-400 */
+  --color-gray-400: #cbd5e1;  /* maps to gray-300 */
+  --color-gray-500: #94a3b8;  /* maps to gray-400 */
 }
+
+/* Ensure body text doesn't become too thin/faint on the dark OLED background in English */
+.theme-en .font-light {
+  font-weight: 400; /* Treat light font-weight as normal (400) for high legibility */
+}
+
 
 @layer base {
   body {
