@@ -27,7 +27,7 @@ created: 2026-05-02
 ### 4. RAG Online
 - **Категория:** Web App
 - **Описание:** AI-автоответчик для автоматизации малого бизнеса и коммуникаций в «одну кнопку».
-- **Ссылка:** [rag.reloto.ru](https://rag.reloto.ru)
+- **Ссылка:** [easyfaq.online](https://easyfaq.online)
 
 ### 5. RAG Search
 - **Категория:** Web App
