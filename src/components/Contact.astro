@@ -2,52 +2,48 @@
 // src/components/Contact.astro
 ---
 
-<section id="contact" class="py-32 px-6 bg-background relative overflow-hidden">
-  <!-- Decorative background elements -->
-  <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px] -z-10"></div>
-  <div class="absolute top-0 left-0 w-[300px] h-[300px] bg-accent/5 rounded-full blur-[80px] -z-10"></div>
+<section id="contact" class="py-28 px-6 bg-background relative overflow-hidden">
+  <!-- Emerald Ambient Glow -->
+  <div class="absolute bottom-0 right-1/2 translate-x-1/2 w-[600px] h-[300px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none"></div>
 
   <div class="max-w-4xl mx-auto text-center relative z-10">
-    <h2 class="text-4xl md:text-6xl font-bold mb-8 tracking-tight">
-      Давайте создадим что-то <br class="hidden md:block" /> 
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-glow">выдающееся.</span>
+    <div class="mono-tag text-emerald-400 mb-3 font-semibold">[05] CONTACT & INITIATION</div>
+    <h2 class="text-4xl md:text-7xl font-extrabold neo-heading uppercase mb-6 text-white tracking-tight leading-tight">
+      Готовы запустить <br />
+      <span class="text-gradient-emerald">Ваш Продукт?</span>
     </h2>
-    <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-16 leading-relaxed">
-      Готовы автоматизировать процессы или запустить новый продукт? <br class="hidden md:block" /> 
-      Свяжитесь с нами.
+    <p class="text-slate-400 text-lg max-w-xl mx-auto mb-12 font-normal leading-relaxed">
+      Напишите напрямую. Обсудим задачи, подберем идеальный стек и рассчитаем точные сроки реализации.
     </p>
 
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-24">
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
       <a 
         href="https://t.me/brozaurus" 
         target="_blank"
         rel="noopener noreferrer"
-        class="w-full sm:w-auto px-10 py-5 bg-surface text-white font-bold rounded-button border border-border-primary hover:border-accent/50 transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
+        class="w-full sm:w-auto px-8 py-4 btn-emerald text-sm font-bold uppercase tracking-wider rounded-lg active:scale-95 flex items-center justify-center gap-3 shadow-[0_0_25px_rgba(16,185,129,0.3)]"
       >
-        <span>Telegram</span>
+        <span>Telegram: @brozaurus</span> →
       </a>
       
       <a 
         href="https://wa.me/5548992012727" 
         target="_blank"
         rel="noopener noreferrer"
-        class="w-full sm:w-auto px-10 py-5 bg-surface text-white font-bold rounded-button border border-border-primary hover:border-accent/50 transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
+        class="w-full sm:w-auto px-8 py-4 btn-outline-neo text-sm font-bold uppercase tracking-wider rounded-lg active:scale-95 flex items-center justify-center gap-3"
       >
         <span>WhatsApp</span>
       </a>
     </div>
 
-    <!-- Minimalist Footer -->
-    <footer class="pt-12 border-t border-border-primary/50">
-      <div class="flex flex-col items-center gap-4">
-        <div class="text-gray-500 text-sm font-medium tracking-wide">
-          © 2026 <span class="text-white">Сделано Broz Agency</span>
-        </div>
-        <div class="flex gap-6">
-          <div class="w-1 h-1 bg-accent/30 rounded-full"></div>
-          <div class="w-1 h-1 bg-accent/30 rounded-full"></div>
-          <div class="w-1 h-1 bg-accent/30 rounded-full"></div>
-        </div>
+    <!-- Neo Footer -->
+    <footer class="pt-10 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span class="text-slate-300 font-bold uppercase">BROZ.AGENCY // 2026</span>
+      </div>
+      <div>
+        <span>ASTRO 6 • FLUTTER • SUPABASE • AI AGENTS</span>
       </div>
     </footer>
   </div>

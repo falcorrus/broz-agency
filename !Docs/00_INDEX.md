@@ -1,11 +1,12 @@
 ---
+type: "index"
+category: "project"
+project: "broz.agency"
 title: "broz.agency: Index"
 author: "Gemini CLI"
 status: "active"
-type: "index"
 created: 2026-05-02
 ---
-
 # 🗂 broz.agency | Документация
 
 Добро пожаловать в центр управления проектом **broz.agency**. Это персональный сайт-визитка Евгения Киршина (Full Cycle Product Engineer).

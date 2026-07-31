@@ -2,103 +2,85 @@
 // src/components/en/AboutEn.astro
 ---
 
-<section id="about" class="py-32 px-6 bg-background relative overflow-hidden">
-  <!-- Glowing Violet Halo -->
-  <div class="absolute top-1/2 left-0 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[140px] -z-10"></div>
+<section id="about" class="py-28 px-6 bg-background relative overflow-hidden">
+  <!-- Subtle Ambient Light -->
+  <div class="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[140px] pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <!-- Left Info Column -->
       <div>
-        <h2 class="text-4xl md:text-6xl font-heading font-black mb-10 tracking-tight italic text-white uppercase">
-          Why <span class="text-accent not-italic">Us?</span>
+        <div class="mono-tag text-emerald-400 mb-3 font-semibold">[02] ABOUT US</div>
+        <h2 class="text-4xl md:text-6xl font-extrabold neo-heading uppercase mb-8 text-white tracking-tight leading-tight">
+          WHY PARTNER WITH <br /><span class="text-gradient-emerald">BROZ AGENCY</span>
         </h2>
         
-        <p class="text-slate-400 text-lg leading-relaxed mb-12 font-light max-w-xl italic font-body">
-          "We do not just write code — we build digital assets that belong completely to you."
+        <p class="text-slate-400 text-lg leading-relaxed mb-10 max-w-xl font-normal">
+          "We don't just write code — we architect high-speed digital assets that deliver measurable ROI and zero downtime."
         </p>
         
-        <div class="space-y-8">
-          <div class="reveal flex gap-6 p-8 glass-panel rounded-container group">
-            <div class="w-14 h-14 bg-accent/5 rounded-button flex items-center justify-center border border-accent/20 shrink-0 group-hover:border-accent/50 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-              </svg>
+        <div class="space-y-6">
+          <div class="reveal neo-card p-6 flex gap-5 items-start">
+            <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center border border-emerald-500/30 shrink-0 text-emerald-400 font-mono font-bold">
+              01
             </div>
             <div>
-              <h3 class="text-white font-heading text-xl mb-2 italic">Business Intelligence</h3>
-              <p class="text-slate-500 text-sm font-body font-light leading-relaxed">Specialists with backgrounds in economics and IT. We build solutions that yield high ROI, not just consume developer resources.</p>
+              <h3 class="text-white font-bold neo-heading text-lg mb-1">Business Intelligence</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">Engineers with strong computer science & economics backgrounds. We craft software built to scale your business bottom line.</p>
             </div>
           </div>
 
-          <div class="reveal flex gap-6 p-8 glass-panel rounded-container group" style="transition-delay: 100ms">
-            <div class="w-14 h-14 bg-accent/5 rounded-button flex items-center justify-center border border-accent/20 shrink-0 group-hover:border-accent/50 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+          <div class="reveal neo-card p-6 flex gap-5 items-start" style="transition-delay: 100ms">
+            <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center border border-emerald-500/30 shrink-0 text-emerald-400 font-mono font-bold">
+              02
             </div>
             <div>
-              <h3 class="text-white font-heading text-xl mb-2 italic">Community Leaders</h3>
-              <p class="text-slate-500 text-sm font-body font-light leading-relaxed">Organizers of the @flutterflow_rus developer community. Fostering a culture of fast, modern, and robust software engineering.</p>
+              <h3 class="text-white font-bold neo-heading text-lg mb-1">Community Expertise</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">Organizers of the @flutterflow_rus developer community. Pushing front-line standards in mobile and web architecture.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="relative group h-[500px]">
-        <!-- Bento Blueprint Visualizer -->
+      <!-- Right Bento Column -->
+      <div class="relative h-[480px]">
         <div class="grid grid-cols-2 grid-rows-2 gap-4 h-full">
-          <!-- Fast Module -->
-          <div class="glass-panel rounded-container p-6 flex flex-col justify-between overflow-hidden relative group/item">
-            <div class="absolute top-0 right-0 p-2 opacity-10 group-hover/item:opacity-30 transition-opacity">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            </div>
-            <span class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">Velocity</span>
-            <h3 class="text-3xl font-heading font-black text-white italic">Fast.</h3>
+          <!-- Bento Box 1 -->
+          <div class="neo-card p-6 flex flex-col justify-between relative overflow-hidden group">
+            <div class="mono-tag text-slate-500">VELOCITY // 99+</div>
+            <h3 class="text-3xl font-extrabold text-white uppercase neo-heading">Fast.</h3>
+            <div class="w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
           </div>
 
-          <!-- Good Module -->
-          <div class="glass-panel rounded-container p-6 flex flex-col justify-between overflow-hidden relative group/item">
-            <div class="absolute top-0 right-0 p-2 opacity-10 group-hover/item:opacity-30 transition-opacity">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            </div>
-            <span class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">Quality</span>
-            <h3 class="text-3xl font-heading font-black text-white italic">Great.</h3>
+          <!-- Bento Box 2 -->
+          <div class="neo-card p-6 flex flex-col justify-between relative overflow-hidden group">
+            <div class="mono-tag text-slate-500">QUALITY // CODE</div>
+            <h3 class="text-3xl font-extrabold text-emerald-400 uppercase neo-heading">Robust.</h3>
+            <div class="mono-tag text-slate-400 text-[10px]">ZERO TECH DEBT</div>
           </div>
 
-          <!-- Flexible Module -->
-          <div class="col-span-2 glass-panel rounded-container p-8 flex flex-col justify-between relative overflow-hidden group/flex">
-            <!-- Animated Blueprint Background with subtle violet lines -->
-            <div class="absolute inset-0 bg-[linear-gradient(to_right,#7c3aed_1px,transparent_1px),linear-gradient(to_bottom,#7c3aed_1px,transparent_1px)] bg-[size:20px_20px] opacity-[0.03] group-hover/flex:opacity-[0.08] transition-opacity"></div>
+          <!-- Bento Main Box 3 -->
+          <div class="col-span-2 neo-card p-8 flex flex-col justify-between relative overflow-hidden group border-emerald-500/30">
+            <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
             
-            <div class="relative z-10 flex justify-between items-start">
+            <div class="flex justify-between items-start">
               <div>
-                <span class="text-[9px] font-mono text-accent uppercase tracking-widest block mb-1">Architecture</span>
-                <h3 class="text-6xl font-heading font-black text-accent italic tracking-tighter drop-shadow-[0_0_15px_rgba(124,58,237,0.3)]">Agile.</h3>
+                <div class="mono-tag text-emerald-400 mb-1">ARCHITECTURE</div>
+                <h3 class="text-5xl font-extrabold text-white uppercase neo-heading">Flexible.</h3>
               </div>
-              <div class="flex flex-col items-end text-[8px] font-mono text-slate-600 gap-1 uppercase tracking-widest">
-                <span>Deprecated: Fixed Scope</span>
-                <span class="text-slate-400">Status: Autonomous</span>
-              </div>
+              <span class="px-2.5 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded text-[10px] font-mono text-emerald-400">AUTONOMOUS</span>
             </div>
 
-            <div class="relative z-10 mt-auto flex items-center justify-between">
-              <p class="text-[10px] text-slate-500 max-w-[220px] leading-relaxed font-body font-light">
-                We adapt to market changes faster than your team can rewrite the project backlog.
-              </p>
-              <div class="w-10 h-10 border border-accent/20 rounded flex items-center justify-center">
-                <div class="w-4 h-4 border border-accent rounded-sm rotate-45 animate-spin [animation-duration:5s]"></div>
-              </div>
-            </div>
+            <p class="text-xs text-slate-400 max-w-sm mt-4 font-normal leading-relaxed">
+              We pivot to emerging market needs faster than you can update your roadmap. Complete IP transfer and clean documentation included.
+            </p>
           </div>
         </div>
 
-        <!-- 100% Ownership Badge -->
-        <div class="absolute -bottom-6 -right-6 p-6 bg-surface border border-accent/20 rounded-container shadow-2xl backdrop-blur-md reveal" style="transition-delay: 300ms">
-          <div class="flex flex-col gap-1">
-             <div class="text-3xl font-heading font-bold text-white tracking-tighter italic">100%</div>
-             <div class="text-[8px] text-slate-500 uppercase tracking-[0.2em] leading-tight font-bold">Ownership of<br/>the Outcome</div>
-          </div>
+        <!-- Metric Badge -->
+        <div class="absolute -bottom-4 -right-4 p-5 neo-card bg-[#18181c] shadow-2xl border-emerald-500/40 reveal" style="transition-delay: 300ms">
+          <div class="text-3xl font-black text-emerald-400 font-mono">100%</div>
+          <div class="mono-tag text-slate-400 text-[9px] mt-1">OWNERSHIP OF RESULTS</div>
         </div>
       </div>
     </div>

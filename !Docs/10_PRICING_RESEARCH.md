@@ -1,3 +1,8 @@
+---
+type: "entity"
+category: "project"
+project: "broz.agency"
+---
 # Исследование и Варианты Тарифных Планов (Pricing Research)
 
 ## Классическая продуктовая линейка (Улучшение текущей сетки)

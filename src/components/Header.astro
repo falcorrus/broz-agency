@@ -14,68 +14,57 @@ const navItems = lang === 'ru' ? [
   { label: 'Cases', id: 'portfolio' }
 ];
 
-const ctaText = lang === 'ru' ? 'Связаться' : 'Contact';
+const ctaText = lang === 'ru' ? 'Связаться' : 'Get in Touch';
 ---
 
-<header id="main-header" class="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 transition-all duration-500 rounded-full border border-transparent">
-  <div class="px-8 py-4 flex items-center justify-between">
+<header id="main-header" class="fixed top-5 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 transition-all duration-300 rounded-xl border border-white/10 bg-[#0a0a0c]/80 backdrop-blur-xl">
+  <div class="px-6 py-3.5 flex items-center justify-between">
+    <!-- Logo -->
     <a href={lang === 'ru' ? '/' : '/en/'} class="flex items-center gap-3 group">
-      <div class="relative w-8 h-8 flex items-center justify-center">
-        <div class="absolute inset-0 border border-accent/40 rotate-45 group-hover:rotate-90 transition-transform duration-500"></div>
-        <div class="absolute inset-1 border border-accent/20 -rotate-12 group-hover:rotate-0 transition-transform duration-700"></div>
-        <span class="font-heading text-xl font-bold text-white group-hover:text-accent transition-colors">B</span>
+      <div class="relative w-8 h-8 flex items-center justify-center bg-[#131316] border border-emerald-500/40 rounded-lg group-hover:border-emerald-400 transition-colors">
+        <span class="font-mono text-emerald-400 font-bold text-base group-hover:scale-110 transition-transform">B</span>
       </div>
-      <span class="text-lg font-heading tracking-widest text-white uppercase font-bold">Broz <span class="text-accent italic font-normal">Agency</span></span>
+      <span class="text-base neo-heading tracking-tight text-white">
+        Broz<span class="text-emerald-400 ml-1">.Agency</span>
+      </span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-10">
+    <!-- Navigation -->
+    <nav class="hidden md:flex items-center gap-8">
       {navItems.map((item) => (
         <a 
           href={`#${item.id}`} 
-          class="text-[10px] uppercase tracking-[0.3em] font-bold text-slate-400 hover:text-accent transition-all relative group"
+          class="mono-tag text-slate-400 hover:text-emerald-400 transition-colors relative group py-1"
         >
           {item.label}
-          <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all group-hover:w-full"></span>
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-emerald-400 transition-all duration-300 group-hover:w-full"></span>
         </a>
       ))}
     </nav>
 
-    <div class="flex items-center gap-4 sm:gap-6">
+    <!-- Actions -->
+    <div class="flex items-center gap-4">
       <!-- Language Selector -->
       <button 
         id="lang-toggle" 
-        class="px-3.5 py-1.5 border border-border-primary hover:border-accent/40 rounded-button text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-white cursor-pointer transition-all active:scale-95 bg-surface/30 backdrop-blur-md"
+        class="px-3 py-1.5 border border-white/10 hover:border-emerald-500/50 rounded-md font-mono text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white cursor-pointer transition-all active:scale-95 bg-[#131316]"
         aria-label="Toggle language"
       >
         {lang === 'ru' ? 'EN' : 'RU'}
       </button>
 
-      <a href="#contact" class="hidden sm:inline-flex px-6 py-2 bg-accent text-white text-[10px] uppercase tracking-widest font-bold rounded-button hover:shadow-[0_0_20px_-5px_var(--color-accent)] transition-all active:scale-95">
-        {ctaText}
+      <!-- CTA Button -->
+      <a href="#contact" class="hidden sm:inline-flex px-5 py-2 btn-emerald text-xs uppercase tracking-wider font-bold rounded-md active:scale-95">
+        {ctaText} →
       </a>
-      <button class="md:hidden text-white p-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-      </button>
     </div>
   </div>
 </header>
 
-<script is:inline>
-  // Sticky header animation
-  const header = document.getElementById('main-header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      header.classList.add('bg-background/60', 'backdrop-blur-xl', 'border-border-primary', 'top-4');
-    } else {
-      header.classList.remove('bg-background/60', 'backdrop-blur-xl', 'border-border-primary', 'top-4');
-    }
-  });
-
-  // Language switcher click handler
+<script is:inline define:vars={{ currentLang: lang }}>
   const langToggle = document.getElementById('lang-toggle');
   if (langToggle) {
     langToggle.addEventListener('click', () => {
-      const currentLang = localStorage.getItem('lang') || (navigator.language.startsWith('ru') ? 'ru' : 'en');
       const nextLang = currentLang === 'ru' ? 'en' : 'ru';
       localStorage.setItem('lang', nextLang);
       

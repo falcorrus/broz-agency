@@ -1,8 +1,10 @@
 ---
+type: "entity"
+category: "project"
+project: "broz.agency"
 title: "05. Лог решений"
 created: 2026-05-02
 ---
-
 # 🪵 Лог принятых решений (Solutions Log)
 
 История технических и дизайн-выборов в проекте.

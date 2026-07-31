@@ -16,26 +16,13 @@ const { title, lang = 'ru' } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
 
-		<!-- Automatic Browser Language Redirection Script -->
+		<!-- Safe Language Preference Save (No automatic forced redirects) -->
 		<script is:inline define:vars={{ currentPageLang: lang }}>
 			(function() {
-				const savedLang = localStorage.getItem('lang');
-				if (savedLang) {
-					if (savedLang === 'en' && currentPageLang === 'ru') {
-						window.location.replace('/en');
-					} else if (savedLang === 'ru' && currentPageLang === 'en') {
-						window.location.replace('/');
-					}
-				} else {
-					const browserLang = navigator.language || navigator.userLanguage;
-					const isRu = browserLang && browserLang.startsWith('ru');
-					if (isRu) {
-						localStorage.setItem('lang', 'ru');
-						if (currentPageLang === 'en') window.location.replace('/');
-					} else {
-						localStorage.setItem('lang', 'en');
-						if (currentPageLang === 'ru') window.location.replace('/en');
-					}
+				try {
+					localStorage.setItem('lang', currentPageLang);
+				} catch (err) {
+					// Fallback for private browsing
 				}
 			})();
 		</script>
@@ -50,7 +37,7 @@ const { title, lang = 'ru' } = Astro.props;
 		</script>
 	</head>
 
-	<body class="bg-background text-white font-body antialiased selection:bg-accent selection:text-white transition-colors duration-500">
+	<body class="bg-background text-white font-body antialiased selection:bg-emerald-500 selection:text-slate-950 transition-colors duration-500">
 		<Header lang={lang} />
 		<slot />
 
@@ -75,7 +62,6 @@ const { title, lang = 'ru' } = Astro.props;
 				reveals.forEach(el => observer.observe(el));
 			});
 
-			// Handle Astro page transitions (if used) or just ensure it runs
 			document.addEventListener('astro:after-swap', () => {
 				const reveals = document.querySelectorAll('.reveal');
 				reveals.forEach(el => observer.observe(el));
@@ -85,18 +71,17 @@ const { title, lang = 'ru' } = Astro.props;
 </html>
 
 <style is:global>
-	/* Custom scrollbar */
 	::-webkit-scrollbar {
-		width: 10px;
+		width: 8px;
 	}
 	::-webkit-scrollbar-track {
-		background: #050505; /* fallback for background theme */
+		background: #0a0a0c;
 	}
 	::-webkit-scrollbar-thumb {
-		background: #1a1a1a; /* fallback for border-primary theme */
-		border-radius: 5px;
+		background: #1c1c22;
+		border-radius: 4px;
 	}
 	::-webkit-scrollbar-thumb:hover {
-		background: #252525;
+		background: #10b981;
 	}
 </style>

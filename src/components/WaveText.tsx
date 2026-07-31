@@ -7,13 +7,14 @@ interface WaveTextProps {
 
 export default function WaveText({ texts }: WaveTextProps) {
   const [index, setIndex] = useState(0);
+  const textKey = texts.join('|');
 
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % texts.length);
     }, 4000);
     return () => clearInterval(timer);
-  }, [texts]);
+  }, [textKey]);
 
   return (
     <div className="relative inline-block py-2">
@@ -27,29 +28,11 @@ export default function WaveText({ texts }: WaveTextProps) {
             duration: 0.8, 
             ease: [0.22, 1, 0.36, 1] 
           }}
-          className="inline-block text-gradient font-bold not-italic leading-none"
+          className="inline-block text-gradient-emerald font-extrabold uppercase not-italic leading-none"
         >
           {texts[index]}
         </motion.span>
       </AnimatePresence>
-      
-      {/* Liquid Wave Effect - Soft Glow instead of square box */}
-      <motion.div
-        key={`glow-${index}`}
-        initial={{ left: '-20%', opacity: 0 }}
-        animate={{ left: '120%', opacity: [0, 1, 0] }}
-        transition={{ 
-          duration: 1.5, 
-          ease: "easeInOut",
-          delay: 0.2
-        }}
-        className="absolute top-0 bottom-0 w-32 pointer-events-none z-20"
-        style={{
-          background: 'radial-gradient(circle, var(--color-accent) 0%, transparent 70%)',
-          filter: 'blur(20px)',
-          mixBlendMode: 'screen'
-        }}
-      />
     </div>
   );
 }

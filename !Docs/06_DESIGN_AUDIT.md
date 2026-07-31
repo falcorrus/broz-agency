@@ -1,3 +1,8 @@
+---
+type: "entity"
+category: "project"
+project: "broz.agency"
+---
 # Дизайн-аудит broz.agency
 
 ## Текущий стек

@@ -12,6 +12,14 @@
 
 ---
 
+## 🎨 Visual Design Concepts (2026)
+
+- **Option 1: Linear Tech Studio (Recommended)** — [linear_tech_studio.jpg](file:///Users/eugene/MyProjects/broz.agency/design-system/broz-agency-v2/linear_tech_studio.jpg) (Obsidian `#050505`, Royal Violet `#6d5dfc`, Geist/Outfit font, Bento grid)
+- **Option 2: Neo-Brutalist Kinetic** — [neo_brutalist_kinetic.jpg](file:///Users/eugene/MyProjects/broz.agency/design-system/broz-agency-v2/neo_brutalist_kinetic.jpg) (Charcoal `#0a0a0a`, Electric Emerald `#10b981`, Syne font, high contrast)
+- **Option 3: App-like Interactive** — [app_like_interactive.jpg](file:///Users/eugene/MyProjects/broz.agency/design-system/broz-agency-v2/app_like_interactive.jpg) (Dark Zinc `#030712`, Cyan Glow `#06b6d4`, Plus Jakarta Sans font, dashboard widgets)
+
+---
+
 ## Global Rules
 
 ### Color Palette

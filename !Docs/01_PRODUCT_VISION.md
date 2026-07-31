@@ -1,8 +1,10 @@
 ---
+type: "entity"
+category: "project"
+project: "broz.agency"
 title: "01. Видение продукта"
 created: 2026-05-02
 ---
-
 # 🎯 Видение продукта: broz.agency
 
 ## Обзор

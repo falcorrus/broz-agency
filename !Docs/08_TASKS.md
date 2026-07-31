@@ -1,3 +1,8 @@
+---
+type: "entity"
+category: "project"
+project: "broz.agency"
+---
 # Список задач по реализации английской версии broz.agency
 
 - [x] Создать `ProcessCardsEn.tsx` React-компонент

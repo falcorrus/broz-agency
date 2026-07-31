@@ -1,8 +1,10 @@
 ---
+type: "entity"
+category: "project"
+project: "broz.agency"
 title: "02. Архитектура и Стек"
 created: 2026-05-02
 ---
-
 # 🏗 Архитектура и Стек технологий
 
 Проект построен по принципу "Speed & Performance first".

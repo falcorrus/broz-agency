@@ -1,8 +1,10 @@
 ---
+type: "entity"
+category: "project"
+project: "broz.agency"
 title: "03. Деплой и Операции"
 created: 2026-05-02
 ---
-
 # 🚀 Деплой и Операции
 
 ## 💻 Локальная разработка

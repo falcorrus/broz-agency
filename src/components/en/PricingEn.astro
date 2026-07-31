@@ -3,60 +3,62 @@
 
 const plans = [
   {
-    name: "Start / Landing MVP",
+    num: "01",
+    name: "Starter / Landing MVP",
     price: "$500 - $1500",
-    description: "For hypothesis testing, ad campaigns, and lead generation.",
+    description: "Rapid launch for validation, ad campaigns, and quick lead capture.",
     features: [
       "<b>Scope:</b> Landing page or MVP up to 5 screens.",
-      "<b>Design:</b> Responsive UI/UX (choice from 4 variants).",
-      "<b>Conversion:</b> Basic lead capture forms (Telegram/Email/Google Sheets).",
-      "<b>SEO & Infra:</b> Basic SEO setup, domain configuration, deployment to Vercel/Beget.",
-      "<b>Timeline:</b> Up to 96 hours; 2 major revisions under warranty."
+      "<b>Design:</b> Responsive UI/UX tailored to your brand.",
+      "<b>Integrations:</b> Lead routing to Telegram / Email / Sheets.",
+      "<b>Infra:</b> SEO optimization, Vercel/Beget deployment.",
+      "<b>Timeline:</b> 48 to 96 hours delivery."
     ],
     highlight: false,
-    cta: "Order MVP"
+    cta: "Launch MVP"
   },
   {
+    num: "02",
     name: "Growth / Full Product",
     price: "$3000 - $5000",
-    description: "For launching a full-fledged SaaS, marketplace, or complex corporate service.",
+    description: "Production-ready SaaS, marketplace, or mobile-first platform.",
     features: [
-      "<b>Scope:</b> Multi-page application or SPA with routing (up to 15 screens).",
-      "<b>Design:</b> Deep UX research, custom design system.",
-      "<b>Backend & Data:</b> DB architecture, Supabase integration, Auth, Payment processing.",
-      "<b>Analytics:</b> End-to-end analytics (GA4, custom events).",
-      "<b>Timeline:</b> 2-4 weeks; 1 month of post-launch support and bug fixes."
+      "<b>Scope:</b> Multi-page SPA/PWA application (up to 15 screens).",
+      "<b>UX/UI:</b> Custom design system and reusable components.",
+      "<b>Backend:</b> Supabase DB, Auth, Stripe/Payment gateway.",
+      "<b>Analytics:</b> GA4, custom event funnels.",
+      "<b>Guarantee:</b> 1 month of bugfixes and support."
     ],
     highlight: true,
-    cta: "Launch Product"
+    cta: "Start Product"
   },
   {
-    name: "Advanced / AI",
+    num: "03",
+    name: "Advanced / AI Integration",
     price: "from $5000",
-    description: "For businesses looking to optimize costs or integrate AI under the hood.",
+    description: "Cost reduction and deep artificial intelligence integration.",
     features: [
-      "<b>Audit:</b> Deep analysis of the company's business processes.",
-      "<b>AI Integrations:</b> Custom business integrations, extensive LLM implementation.",
-      "<b>Automation:</b> Script development (e.g., auto-replies, report generation).",
-      "<b>Agents:</b> Telegram bots or web agents with memory and logic.",
-      "<b>Integrations:</b> Connection to any existing CRM/ERP via API.",
-      "<b>Support:</b> Up to 3 months of warranty support and bug fixes."
+      "<b>Audit:</b> Full engineering review of business workflows.",
+      "<b>AI Integration:</b> LLMs (Gemini/OpenAI) tailored to your data.",
+      "<b>Automation:</b> Autonomous n8n background pipelines.",
+      "<b>AI Agents:</b> Knowledge-grounded (RAG) Telegram & web bots.",
+      "<b>Support:</b> Up to 3 months dedicated warranty."
     ],
     highlight: false,
-    cta: "Discuss Project"
+    cta: "Discuss AI"
   }
 ];
 ---
 
-<section id="pricing" class="py-32 px-6 bg-background relative overflow-hidden">
+<section id="pricing" class="py-28 px-6 bg-background relative overflow-hidden">
   <div class="max-w-7xl mx-auto relative z-10">
-    <div class="text-center mb-24">
-      <h2 class="text-4xl md:text-6xl font-heading mb-6 tracking-tight italic text-white uppercase">
-        Transparent <span class="text-accent not-italic font-bold">Pricing.</span>
+    <div class="text-center mb-20">
+      <div class="mono-tag text-emerald-400 mb-3 font-semibold">[04] TRANSPARENT PRICING</div>
+      <h2 class="text-4xl md:text-6xl font-extrabold neo-heading uppercase text-white tracking-tight mb-4">
+        TRANSPARENT <span class="text-gradient-emerald">PRICING</span>
       </h2>
-      <p class="text-slate-400 text-lg max-w-2xl mx-auto font-light leading-relaxed">
-        All types of contracts. Flexible global payments. <br class="hidden md:block" /> 
-        We focus entirely on the outcome.
+      <p class="text-slate-400 text-base max-w-xl mx-auto font-normal">
+        Fixed price quotes upfront. Zero hidden fees or sudden rate jumps.
       </p>
     </div>
 
@@ -64,31 +66,30 @@ const plans = [
       {plans.map((plan, index) => (
         <div 
           class:list={[
-            "reveal group relative p-10 glass-panel rounded-container flex flex-col transition-all duration-500",
-            { "border-accent/40 shadow-[0_0_50px_-12px_rgba(124,58,237,0.3)] scale-105 z-10": plan.highlight }
+            "reveal neo-card p-8 flex flex-col relative transition-all duration-300",
+            { "border-emerald-500/60 bg-[#18181c] shadow-[0_0_40px_rgba(16,185,129,0.2)] md:-translate-y-2": plan.highlight }
           ]}
-          style={`transition-delay: ${index * 150}ms`}
+          style={`transition-delay: ${index * 120}ms`}
         >
           {plan.highlight && (
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-[9px] font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full">
-              Recommended
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-emerald-500 text-slate-950 font-mono text-[10px] font-extrabold uppercase tracking-widest px-4 py-1 rounded-full shadow-lg">
+              MOST POPULAR
             </div>
           )}
           
-          <div class="mb-10">
-            <h3 class="text-2xl font-heading font-bold mb-4 text-white group-hover:text-accent transition-colors italic">{plan.name}</h3>
-            <div class="flex items-baseline gap-2 mb-6">
-              <span class="text-4xl md:text-5xl font-heading font-black text-white italic tracking-tighter">{plan.price}</span>
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-2">
+              <span class="mono-tag text-emerald-400 font-bold">{plan.num} // PLAN</span>
             </div>
-            <p class="text-slate-500 text-sm leading-relaxed font-light">{plan.description}</p>
+            <h3 class="text-2xl font-extrabold neo-heading text-white uppercase mb-4">{plan.name}</h3>
+            <div class="text-3xl md:text-4xl font-extrabold font-mono text-white mb-4 tracking-tight">{plan.price}</div>
+            <p class="text-slate-400 text-xs leading-relaxed font-normal">{plan.description}</p>
           </div>
 
-          <ul class="space-y-4 mb-12 flex-1">
+          <ul class="space-y-3.5 mb-10 flex-1 border-t border-white/10 pt-6">
             {plan.features.map((feature) => (
-              <li class="flex items-start gap-3 text-xs text-slate-400 font-light group-hover:text-slate-300 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-accent/60 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
+              <li class="flex items-start gap-3 text-xs text-slate-300 font-normal">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span>
                 <span set:html={feature} />
               </li>
             ))}
@@ -97,21 +98,20 @@ const plans = [
           <a 
             href="#contact" 
             class:list={[
-              "w-full py-4 text-[10px] uppercase tracking-[0.2em] font-bold rounded-button text-center transition-all active:scale-95",
+              "w-full py-3.5 text-xs uppercase tracking-wider font-bold rounded-lg text-center transition-all active:scale-95",
               plan.highlight 
-                ? "bg-accent text-white shadow-[0_0_20px_rgba(124,58,237,0.4)]" 
-                : "bg-white/5 text-white border border-border-primary hover:border-accent/50 hover:bg-accent/5"
+                ? "btn-emerald" 
+                : "btn-outline-neo"
             ]}
           >
-            {plan.cta}
+            {plan.cta} →
           </a>
         </div>
       ))}
     </div>
 
-    <div class="mt-16 text-center text-xs text-slate-500/60 max-w-3xl mx-auto space-y-2">
-      <p>* Cost largely depends on the volume and quality of materials provided by the client, fixed upfront for the entire project.</p>
-      <p>* Server/hosting, domain purchase, and paid APIs (e.g., OpenAI) are covered by the client and discussed separately.</p>
+    <div class="mt-14 text-center text-xs font-mono text-slate-500 max-w-2xl mx-auto">
+      * All milestone scopes agreed before kick-off. Clear progress reporting and ownership.
     </div>
   </div>
 </section>

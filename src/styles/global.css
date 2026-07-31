@@ -1,72 +1,140 @@
+/* Import Neo-Brutalist Kinetic Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap');
 @import "tailwindcss";
 
-/* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
-
 @theme {
-  /* Sovereign Colors - Deep Blue/Black Base */
-  --color-background: #020617; /* Slate-950 */
-  --color-accent: #0ea5e9;     /* Sky-500 (Security Blue) */
-  --color-accent-glow: #38bdf8; /* Sky-400 */
-  --color-surface: #0f172a;    /* Slate-900 */
-  --color-border-primary: #1e293b; /* Slate-800 */
-  --color-success: #22c55e;    /* Protected Green */
+  /* Neo-Brutalist Kinetic Colors */
+  --color-background: #0a0a0c;      /* Deep Obsidian / Dark Charcoal */
+  --color-surface: #131316;         /* Bento Surface Panel */
+  --color-surface-hover: #1c1c22;   /* Hover Surface */
+  --color-surface-elevated: #18181c;/* Slightly raised card */
+  
+  --color-accent: #10b981;          /* Electric Emerald */
+  --color-accent-glow: #34d399;     /* Emerald Glow */
+  --color-accent-violet: #8b5cf6;   /* Kinetic Violet */
+  --color-accent-cyan: #06b6d4;     /* Kinetic Cyan */
+  
+  --color-border-primary: rgba(255, 255, 255, 0.1);
+  --color-border-accent: rgba(16, 185, 129, 0.4);
+  --color-success: #10b981;
 
-  /* Fonts */
-  --font-heading: "Bodoni Moda", serif;
-  --font-body: "Jost", sans-serif;
+  /* Typography */
+  --font-heading: "Syne", "Space Grotesk", sans-serif;
+  --font-subheading: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 
-  /* Rounding (Sovereign Style - slightly sharper but still refined) */
-  --radius-container: 24px;
+  /* Rounding (Neo-Brutalist: sharp yet rounded 18px container, 8px buttons) */
+  --radius-container: 18px;
+  --radius-card: 16px;
   --radius-button: 8px;
+  --radius-badge: 6px;
 
-  /* Custom Animations */
+  /* Keyframe Animations */
   @keyframes fade-in-up {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  @keyframes shimmer {
+  @keyframes pulse-emerald {
+    0%, 100% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
+    50% { box-shadow: 0 0 30px rgba(16, 185, 129, 0.7); }
+  }
+
+  @keyframes shimmer-emerald {
     0% { background-position: -200% 0; }
     100% { background-position: 200% 0; }
   }
 }
 
-/* English Version - Dark Glassmorphism Premium Style Overrides */
-.theme-en {
-  --color-background: #000000;      /* Pure OLED Black */
-  --color-accent: #7c3aed;          /* Premium Violet */
-  --color-accent-glow: #a78bfa;     /* Violet light */
-  --color-surface: #0c0a09;         /* Stone-950 Deep Obsidian */
-  --color-border-primary: rgba(255, 255, 255, 0.09); /* Subtle transparent borders */
-  
-  --font-heading: "DM Sans", sans-serif;
-  --font-body: "DM Sans", sans-serif; /* DM Sans is rounder, highly readable, and looks extremely premium at body size */
-
-  /* Shift slate and gray colors to brighter values in English version to improve color contrast on OLED Black (#000000) */
-  --color-slate-400: #cbd5e1; /* maps to slate-300 */
-  --color-slate-500: #94a3b8; /* maps to slate-400 */
-  --color-gray-400: #cbd5e1;  /* maps to gray-300 */
-  --color-gray-500: #94a3b8;  /* maps to gray-400 */
-}
-
-/* Ensure body text doesn't become too thin/faint on the dark OLED background in English */
-.theme-en .font-light {
-  font-weight: 400; /* Treat light font-weight as normal (400) for high legibility */
-}
-
-
+/* Base resets & styles */
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #0a0a0c;
+    color: #e2e8f0;
+  }
+
   body {
-    @apply bg-background text-slate-200 font-body antialiased;
+    background-color: var(--color-background);
+    color: #f1f5f9;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
   }
   
   h1, h2, h3, h4 {
-    @apply font-heading tracking-tight;
+    font-family: var(--font-heading);
+    letter-spacing: -0.03em;
+    font-weight: 800;
   }
 }
 
-/* Utils */
+/* Neo-Brutalist Custom Utilities */
+.neo-heading {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+}
+
+.mono-tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.neo-card {
+  background: #131316;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-card);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neo-card:hover {
+  border-color: rgba(16, 185, 129, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(16, 185, 129, 0.15);
+}
+
+.btn-emerald {
+  background-color: #10b981;
+  color: #042f2e;
+  font-weight: 700;
+  font-family: var(--font-subheading);
+  border-radius: var(--radius-button);
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+}
+
+.btn-emerald:hover {
+  background-color: #34d399;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 25px rgba(16, 185, 129, 0.5);
+}
+
+.btn-outline-neo {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-family: var(--font-subheading);
+  font-weight: 600;
+  border-radius: var(--radius-button);
+  transition: all 0.2s ease;
+}
+
+.btn-outline-neo:hover {
+  border-color: #10b981;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.text-gradient-emerald {
+  background: linear-gradient(135deg, #ffffff 30%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -78,25 +146,17 @@
   transform: translateY(0);
 }
 
-.glass-panel {
-  @apply bg-surface/50 backdrop-blur-xl border border-border-primary hover:border-accent/40 transition-all duration-300;
-}
-
-.text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-accent to-white bg-[length:200%_auto] animate-[shimmer_4s_linear_infinite];
-}
-
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #020617;
+  background: #0a0a0c;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #1c1c22;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #10b981;
 }
