@@ -44,7 +44,7 @@ const MagicSlider: React.FC = () => {
         <div className="text-center mb-14">
           <div className="mono-tag text-emerald-400 mb-2 font-semibold">[04] AUTOMATION & SPEED</div>
           <h2 className="text-3xl md:text-5xl font-extrabold neo-heading uppercase mb-4 text-white">
-            Магия <span class="text-gradient-emerald">Автоматизации</span>
+            Магия <span className="text-gradient-emerald">Автоматизации</span>
           </h2>
           <p className="text-slate-400 text-base max-w-2xl mx-auto font-normal">
             Перетащите слайдер: от обычной бизнес-идеи в чате до готового работающего продукта с монетизацией.
@@ -89,7 +89,7 @@ const MagicSlider: React.FC = () => {
                 {/* Mock Header */}
                 <div className="pt-7 px-5 pb-3 flex items-center justify-between border-b border-white/10 bg-slate-950">
                   <span className="font-mono font-extrabold text-xs text-white uppercase tracking-wider">BAONLINE // APP</span>
-                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 </div>
                 {/* Mock Content */}
                 <div className="p-4 space-y-3 font-sans">

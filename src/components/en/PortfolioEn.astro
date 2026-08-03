@@ -1,67 +1,12 @@
 ---
 // src/components/en/PortfolioEn.astro
-
-const projects = [
-  {
-    num: "01",
-    title: "CoinLover",
-    description: "Autonomous personal finance tracker. Local data encryption & real-time analytics.",
-    category: "Mobile / Fintech",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800",
-    link: "https://coinlover.ru/landing",
-    size: "large"
-  },
-  {
-    num: "02",
-    title: "FloripaGuru",
-    description: "Relocation portal for Florianópolis: interactive district maps, banking guides & trail routes.",
-    category: "Web Platform / SEO",
-    image: "https://images.unsplash.com/photo-1544984243-ec57ea16fe25?auto=format&fit=crop&q=80&w=800",
-    link: "https://floripa.guru",
-    size: "normal"
-  },
-  {
-    num: "03",
-    title: "Baonline",
-    description: "Decentralized expat relocation hub: real-time business directory & service sync.",
-    category: "Web App",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800",
-    link: "https://bao.reloto.ru",
-    size: "normal"
-  },
-  {
-    num: "04",
-    title: "NewAddress",
-    description: "MVP system for direct peer-to-peer real estate asset management.",
-    category: "PropTech",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
-    link: "https://newaddress.glide.page/",
-    size: "normal"
-  },
-  {
-    num: "05",
-    title: "easyFAQ.online",
-    description: "AI conversational responder for automated customer support & 1-click workflows.",
-    category: "AI / Automation",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
-    link: "https://easyfaq.online",
-    size: "wide"
-  },
-  {
-    num: "06",
-    title: "RAG Search",
-    description: "High-performance vector document search over private enterprise archives.",
-    category: "AI Tooling",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
-    link: "https://search.reloto.ru/",
-    size: "normal"
-  }
-];
+import { PortfolioGrid } from '../PortfolioGrid';
+import { projectsEn } from '../../data/projects';
 ---
 
 <section id="portfolio" class="py-28 px-6 bg-background relative overflow-hidden">
   <div class="max-w-7xl mx-auto relative z-10">
-    <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+    <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
       <div>
         <div class="mono-tag text-emerald-400 mb-3 font-semibold">[03] PORTFOLIO & WORK</div>
         <h2 class="text-4xl md:text-6xl font-extrabold neo-heading uppercase text-white tracking-tight">
@@ -69,64 +14,11 @@ const projects = [
         </h2>
       </div>
       <p class="text-slate-400 text-base max-w-md font-normal leading-relaxed">
-        Production-ready products driving business value: from mobile apps to automated AI search systems.
+        Production-ready products with transparent budgets & timelines: from 48h MVPs to complex enterprise systems.
       </p>
     </div>
 
-    <!-- Bento Portfolio Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[320px]">
-      {projects.map((project, index) => (
-        <a 
-          href={project.link} 
-          target="_blank"
-          class:list={[
-            "reveal group neo-card overflow-hidden flex flex-col relative border border-white/10 hover:border-emerald-500/50 transition-all duration-300",
-            {
-              "md:col-span-2 md:row-span-2": project.size === "large",
-              "md:col-span-2": project.size === "wide",
-              "md:col-span-1": project.size === "normal"
-            }
-          ]}
-          style={`transition-delay: ${index * 80}ms`}
-        >
-          <!-- Background Image -->
-          <div class="absolute inset-0 z-0">
-            <img 
-              src={project.image} 
-              alt={project.title}
-              class="w-full h-full object-cover grayscale opacity-25 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-45"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-[#0a0a0c]/60 to-transparent"></div>
-          </div>
-          
-          <!-- Card Info -->
-          <div class="relative z-10 p-8 mt-auto flex flex-col justify-between h-full">
-            <div class="flex items-center justify-between">
-              <span class="mono-tag text-emerald-400 font-bold px-2.5 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded">
-                {project.category}
-              </span>
-              <span class="font-mono text-slate-500 font-bold text-xs">{project.num}</span>
-            </div>
-            
-            <div>
-              <h3 class="text-2xl md:text-3xl font-extrabold neo-heading text-white mb-2 group-hover:text-emerald-400 transition-colors uppercase">
-                {project.title}
-              </h3>
-              
-              <p class="text-slate-300 text-xs md:text-sm leading-relaxed mb-4 max-w-lg font-normal opacity-90">
-                {project.description}
-              </p>
-              
-              <div class="inline-flex items-center gap-2 text-emerald-400 mono-tag font-bold">
-                <span>View Case</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </a>
-      ))}
-    </div>
+    <!-- Interactive Portfolio Grid with Budget Filter -->
+    <PortfolioGrid client:visible projects={projectsEn} lang="en" />
   </div>
 </section>

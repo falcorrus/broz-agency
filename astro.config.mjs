@@ -12,16 +12,13 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     server: {
-      hmr: {
-        overlay: false
-      },
+      hmr: false,
       watch: {
         ignored: [
-          '**/.antigravitycli/**',
-          '**/.superpowers/**',
-          '**/.gemini/**',
+          '**/.**/**',
+          '**/tasks/**',
           '**/dist/**',
-          '**/.git/**'
+          '**/node_modules/**'
         ]
       }
     }
